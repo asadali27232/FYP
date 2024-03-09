@@ -1,0 +1,10 @@
+[1] R. Inaki, G. Bemard, and P. Julien, “Robust beat detector for ambulatory cardiac monitoring”,31 annual conference of IEEE, EBMS, Minneapolis, Minnesota, USA, pp. 950-953, September2- 6, 2009.
+[2] Tasneem Ibrahim Abdalla,shiemaaSidahmed, ShariefF.Babiker ”Transmission of Real-TimeClinical Diagnostic Signals Over GSM Network ”, IEEE student conference on Research andDevelopment, 2011.
+[3] S.  Mehta,  “Support  Vector  Machine  for  Cardiac  Beat  Detection  in  Single  LeadElectrocardiogram”, IAENGIJAM, 2007
+[4] D.Bansal, M.Khan,A.K. Salhan, “A computer based wireless system for online acquisition,monitoring  and  digital  processing  of  ECG  waveforms”,  Computers  in  Biology  and  Medicine,vol. 39, pp.361-367,2009.
+[5] J.H. Hong, J.M.Kim, E.J.Cha, T.S. Lee, “A Wirelees 3-channel ECG Transmission SystemUsing PDA Phone”, IEEE International Conference on Convergence Information Technology,2007.
+[6] Claudio De Capua, Antonella Meduri and Rosario Morello,” A Remote Doctor for Homecareand Medical Diagnoses on Cardiac Patients by an Adaptive ECG Analysis”, IEEE InternationalWorkshop on Medical Measurements and Applications, May 2009.
+[7] A.Kumar, L.Diwan, M.Singh, “Real Time Monitoring System for ECG Signal Using VirtualInstrumentation”,  WSEAS  Transactions  on  biology  and  biomedicine,  Issue  11,  Volume  3,  pp.638- 643, November 2006.
+[8] E. Jovanov, P. Gelabert, P. Adhami, B. Wheelock, R. Adams, Real time Holter monitoring ofbiomedical  signals,  DSP  Technology  and  Education  conference  DSPS’99,  Houston,  Texas,August 4-6,1999.
+[9] S.Y. Shoon, S.W. Wan, H.T. Nguyen, A novel approach to the design of a Wilson referencedECG amplifier. Austrialia, Phys. Eng. Sci. Med. 16 (3) (1993) 111-117.
+[10] N.V.  Thakor,  Therapeutic/prosthetic  devices-pacemakers  &  defibrillators,  Lectures  onbiomedical instrumentation, JHU Applied Physics Lab.
