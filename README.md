@@ -10,6 +10,7 @@ CardioGraph Pro is a comprehensive system for early detection and management of 
 - [Technologies](#technologies)
 - [Installation and Setup](#installation-and-setup)
 - [Usage Instructions](#usage-instructions)
+- [Architecture](#architecture)
 - [Data Collection and Preprocessing](#data-collection-and-preprocessing)
 - [Model Development and Training](#model-development-and-training)
 - [Deployment](#deployment)
@@ -78,6 +79,10 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
   - Image Upload: File format support and upload process.
   - Prediction Display: How the mobile app shows the results.
 - **Command-line Tools** (if applicable): Describe relevant commands, their arguments, and expected outputs.
+
+## Architecture <a name="architecture"></a>
+
+![CardioGraph Pro Architecture](architecture_diagram.png)
 
 ## Data Collection and Preprocessing <a name="data-collection-and-preprocessing"></a>
 
