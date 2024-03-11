@@ -82,7 +82,7 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
 
 ## Architecture <a name="architecture"></a>
 
-![CardioGraph Pro Architecture](architecture_diagram.png)
+![CardioGraph Pro Architecture](architecture_diagram.jpg)
 
 ## Data Collection and Preprocessing <a name="data-collection-and-preprocessing"></a>
 
