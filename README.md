@@ -16,7 +16,6 @@ CardioGraph Pro is a comprehensive system for early detection and management of 
 - [Deployment](#deployment)
 - [Results and Evaluation](#results-and-evaluation)
 - [Contributers](#contributers)
-- [License](#license)
 - [Let's Connect](#contact)
 
 ## Abstract <a name="abstract"></a>
@@ -119,7 +118,6 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
 
 ## Architecture <a name="architecture"></a>
 
-![CardioGraph Pro Architecture](architecture_diagram.jpg)\
 <img src="https://github.com/asadali27232/FYP/blob/main/architecture_diagram.jpg" alt="CardioGraph Pro Architecture" width="99%" />
 
 ## Data Collection and Preprocessing <a name="data-collection-and-preprocessing"></a>
@@ -160,13 +158,7 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
 - **Discussion**: Analyze the significance of the results and potential limitations.
 
 ## Contributing <a name="contribers"></a>
-
-
-
-## License <a name="license"></a>
-
-- **Specific License**: Choose an open-source license (e.g., MIT, Apache, GPL). Include a LICENSE file in your repository.
-
+This project was developed by [Asad Ali](https://github.com/asadali27232) in participation with [Muhammad Haroom Shahzad](https://github.com/HaroonMalik771) and [Asad ur Rehman](https://github.com/Asad-Rehman22). A project submitted in partial fulfilment of the degree at [COMSATS University Lahore](https://lahore.comsats.edu.pk/default.aspx).
 
 ## 📫 Let's Connect <a name="contact"></a>
 
