@@ -86,6 +86,19 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
 - MS SQL Server: Model data storage
 - MongoDB: User data and medical history
 
+### Integrated Development Environments
+
+![Google Collab](https://img.shields.io/badge/Google_Collab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![Jupyter Notebook](https://img.shields.io/badge/Jupyter_Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![Anaconda](https://img.shields.io/badge/Anaconda-44A833?style=for-the-badge&logo=anaconda&logoColor=white)
+
+- Google Collab: Cloud-based notebooks for model development and collaborations.
+- Visual Studio Code: Lightweight and versatile IDE for app and web development.
+- Jupyter Notebook: Interactive code writing environment for exploratory data analysis and prototyping.
+- Anaconda: Python distribution platform that facilitates Python virtual environments and robust library management.
+
+
 ## Installation and Setup <a name="installation-and-setup"></a>
 
 1. **Dependencies**: List all required Python libraries, frameworks, and any external tools. Use a requirements.txt file to manage dependencies with versions if possible.
