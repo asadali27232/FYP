@@ -74,7 +74,6 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
 
 ### Mobile Development:
 
-### Mobile Development
 ![React Native](https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 
 - React Native: Cross-platform mobile app development
