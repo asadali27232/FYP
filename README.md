@@ -93,11 +93,10 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
 ![Jupyter Notebook](https://img.shields.io/badge/Jupyter_Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![Anaconda](https://img.shields.io/badge/Anaconda-44A833?style=for-the-badge&logo=anaconda&logoColor=white)
 
-- Google Collab: Cloud-based notebooks for model development and collaborations.
-- Visual Studio Code: Lightweight and versatile IDE for app and web development.
-- Jupyter Notebook: Interactive code writing environment for exploratory data analysis and prototyping.
-- Anaconda: Python distribution platform that facilitates Python virtual environments and robust library management.
-
+- Google Collab: Cloud-based notebooks for model development.
+- Visual Studio Code: Lightweight IDE for app and web development.
+- Jupyter Notebook: Interactive environment for data analysis.
+- Anaconda: Python distribution platform for virtual environments.
 
 ## Installation and Setup <a name="installation-and-setup"></a>
 
