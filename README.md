@@ -15,8 +15,9 @@ CardioGraph Pro is a comprehensive system for early detection and management of 
 - [Model Development and Training](#model-development-and-training)
 - [Deployment](#deployment)
 - [Results and Evaluation](#results-and-evaluation)
-- [Contributing](#contributing)
+- [Contributers](#contributers)
 - [License](#license)
+- [Let's Connect](#contact)
 
 ## Abstract <a name="abstract"></a>
 
@@ -121,12 +122,20 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
 - **Benchmarks**: Compare against other published results or baselines.
 - **Discussion**: Analyze the significance of the results and potential limitations.
 
-## Contributing <a name="contributing"></a>
+## Contributing <a name="contribers"></a>
 
-- **Bug Reports**: Where to submit bug reports and the expected format.
-- **Feature Requests**: Process for suggesting new features.
-- **Code Style Guide**: Enforce consistent code formatting conventions.
+
 
 ## License <a name="license"></a>
 
 - **Specific License**: Choose an open-source license (e.g., MIT, Apache, GPL). Include a LICENSE file in your repository.
+
+
+## 📫 Let's Connect <a name="contact"></a>
+
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/923074315952)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:asadali27232@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/asadali27232/)
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/asadalighaffar)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/asadali27232)
+[![Personal Website](https://img.shields.io/badge/Personal%20Website-24292e?style=for-the-badge&logo=react&logoColor=white&color=purplr)](https://asadali27232.github.io/asadali27232)
