@@ -1,4 +1,4 @@
-# CardioGraph Pro: Advanced Heart Disease Prediction System
+# CardioGraph Pro
 
 CardioGraph Pro is a comprehensive system for early detection and management of heart disease. It integrates advanced machine learning, ECG signal analysis, demographic data, image processing, and user-friendly interfaces for accurate predictions and personalized guidance.
 
