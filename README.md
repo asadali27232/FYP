@@ -158,7 +158,7 @@ CardioGraph Pro is driven by the need for early and reliable detection of heart 
 - **Discussion**: Analyze the significance of the results and potential limitations.
 
 ## Contributing <a name="contribers"></a>
-This project was developed by [Asad Ali](https://github.com/asadali27232) in participation with [Muhammad Haroom Shahzad](https://github.com/HaroonMalik771) and [Asad ur Rehman](https://github.com/Asad-Rehman22). A project submitted in partial fulfilment of the degree at [COMSATS University Lahore](https://lahore.comsats.edu.pk/default.aspx).
+This project was developed by [Asad Ali](https://github.com/asadali27232) in participation with [Muhammad Haroom Shahzad](https://github.com/HaroonMalik771) and [Asad ur Rehman](https://github.com/Asad-Rehman22). A project submitted in partial fulfilment of BS Computer Science degree at [COMSATS University Lahore](https://lahore.comsats.edu.pk/default.aspx).
 
 ## 📫 Let's Connect <a name="contact"></a>
 
