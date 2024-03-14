@@ -7,6 +7,7 @@ import streamlit as st
 # Define the path to the background image
 background_image_path = 'ecg_bg_12.png'
 
+
 def plot_ecg_from_file(hea_file, dat_file):
     # Read ECG data using wfdb
     signals, fields = wfdb.rdsamp(hea_file)
@@ -55,7 +56,9 @@ def main():
 
     if uploaded_hea_file is not None:
         # Get the current working directory
-        current_dir = os.getcwd()
+        # remove the last dir from the path
+        current_dir = os.getcwd().split(os.sep)[0:-1]
+        current_dir = os.sep.join(current_dir)
 
         # Define the data directory relative to the current working directory
         data_dir = os.path.join(current_dir, "data", "records", "00000")
@@ -70,7 +73,6 @@ def main():
         fig = plot_ecg_from_file(hea_file, dat_file)
         st.pyplot(fig)
 
+
 if __name__ == "__main__":
-    main() 
-
-
+    main()
