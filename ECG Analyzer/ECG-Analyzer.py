@@ -8,7 +8,7 @@ import streamlit as st
 background_image_path = 'ecg_bg_12.png'
 
 
-def plot_ecg_from_file(hea_file, dat_file):
+def plot_ecg_from_file(hea_file, num_rows=12, time_range=(1, 10)):
     # Read ECG data using wfdb
     signals, fields = wfdb.rdsamp(hea_file)
 
@@ -20,14 +20,14 @@ def plot_ecg_from_file(hea_file, dat_file):
         lead_names = [f'Lead{i+1}' for i in range(len(signals[0]))]
 
     num_leads = len(lead_names)
-    num_rows = 12
-    num_cols = 1
+    num_cols = int(np.ceil(num_leads / num_rows))
 
-    fig, axs = plt.subplots(num_rows, num_cols, figsize=(20, 20))
+    fig, axs = plt.subplots(num_rows, num_cols, figsize=(40, 35))
 
     for i, ax in enumerate(axs.flat):
         if i < num_leads:  # Ensure we don't exceed the number of leads
-            ax.plot(signals[:, i], color='black')
+            ax.plot(signals[time_range[0] * 500: time_range[1]
+                    * 500, i], color='black')
             ax.set_ylabel(lead_names[i])
             ax.grid(True)
 
@@ -52,11 +52,21 @@ def plot_ecg_from_file(hea_file, dat_file):
 def main():
     st.title('ECG Viewer')
 
-    uploaded_hea_file = st.file_uploader("Upload a .hea file", type="hea")
+    # File uploader in the sidebar
+    uploaded_hea_file = st.sidebar.file_uploader(
+        "Upload ECG Signals File", type="hea")
+
+    # Number of rows selector
+    num_rows = st.sidebar.selectbox(
+        "Number of Rows", [3, 4, 6, 12], index=3)  # Default to 12
+
+    # Time range slider
+    time_range = st.sidebar.slider(
+        "Select Time Range (seconds)", 1, 10, (1, 10))
 
     if uploaded_hea_file is not None:
         # Get the current working directory
-        # remove the last dir from the path
+        # Remove the last dir from the path
         current_dir = os.getcwd().split(os.sep)[0:-1]
         current_dir = os.sep.join(current_dir)
 
@@ -68,9 +78,8 @@ def main():
 
         # Construct the file paths
         hea_file = os.path.join(data_dir, record_name)
-        dat_file = os.path.join(data_dir, record_name + '.dat')
 
-        fig = plot_ecg_from_file(hea_file, dat_file)
+        fig = plot_ecg_from_file(hea_file, num_rows, time_range)
         st.pyplot(fig)
 
 
