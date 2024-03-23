@@ -3,9 +3,7 @@ import matplotlib.pyplot as plt
 import wfdb
 import os
 import streamlit as st
-
-# Define the path to the background image
-background_image_path = 'ecg_bg_12.png'
+import shutil
 
 
 def plot_ecg_from_file(hea_file, num_rows=12, time_range=(1, 10)):
@@ -41,11 +39,13 @@ def plot_ecg_from_file(hea_file, num_rows=12, time_range=(1, 10)):
             # ax.spines['bottom'].set_visible(False)
             # ax.spines['left'].set_visible(False)
 
+    # Define the path to the background image
+    # background_image_path = 'ecg_bg_12.png'
     # Load and display the background image
     # img = plt.imread(background_image_path)
     # fig.figimage(img, resize='True', alpha=0.7, zorder=-1)
 
-    plt.tight_layout()  # Adjust layout
+    plt.tight_layout()
     return fig
 
 
@@ -54,7 +54,12 @@ def main():
 
     # File uploader in the sidebar
     uploaded_hea_file = st.sidebar.file_uploader(
-        "Upload ECG Signals File", type="hea")
+        "Upload ECG Signals .hea File", type="hea")
+
+    print(uploaded_hea_file)
+
+    uploaded_dat_file = st.sidebar.file_uploader(
+        "Upload ECG Signals .dat File", type="dat")
 
     # Number of rows selector
     num_rows = st.sidebar.selectbox(
@@ -64,23 +69,30 @@ def main():
     time_range = st.sidebar.slider(
         "Select Time Range (seconds)", 1, 10, (1, 10))
 
-    if uploaded_hea_file is not None:
-        # Get the current working directory
-        # Remove the last dir from the path
-        current_dir = os.getcwd().split(os.sep)[0:-1]
-        current_dir = os.sep.join(current_dir)
+    if uploaded_hea_file is not None and uploaded_dat_file is not None:
+        if not os.path.exists("temp"):
+            os.makedirs("temp")
 
-        # Define the data directory relative to the current working directory
-        data_dir = os.path.join(current_dir, "data", "records", "00000")
+        # Save the uploaded files temporarily
+        with open(os.path.join("temp", uploaded_hea_file.name), "wb") as f:
+            f.write(uploaded_hea_file.getbuffer())
 
-        # Read the uploaded .hea file
-        record_name = os.path.basename(uploaded_hea_file.name).split('.')[0]
+        with open(os.path.join("temp", uploaded_dat_file.name), "wb") as f:
+            f.write(uploaded_dat_file.getbuffer())
 
-        # Construct the file paths
-        hea_file = os.path.join(data_dir, record_name)
+        # Get the dynamic paths of the saved files
+        uploaded_hea_file_path = os.path.join("temp", uploaded_hea_file.name)
 
-        fig = plot_ecg_from_file(hea_file, num_rows, time_range)
+        # Read the record name (you already have the code for this)
+        hea_file = uploaded_hea_file_path.split('.')[0]
+
+        fig = plot_ecg_from_file(
+            hea_file, num_rows, time_range)
         st.pyplot(fig)
+
+    temp_folder = "temp"
+    if os.path.exists(temp_folder):
+        shutil.rmtree(temp_folder)
 
 
 if __name__ == "__main__":
