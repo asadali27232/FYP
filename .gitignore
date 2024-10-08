@@ -1,0 +1,13 @@
+/data
+/preprocessing/CSV_Data/
+/preprocessing/records500
+/preprocessing/output_labels.CSV_Data
+/PTB-xl_data
+/node_modules
+node_modules
+/bin
+/documentation
+/00001_NORM.csv
+/models
+/Preprocessing
+
