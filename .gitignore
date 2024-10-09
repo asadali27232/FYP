@@ -5,3 +5,9 @@
 /PTB-xl_data
 /node_modules
 node_modules
+/models/test_meta.csv
+/models/test_signal.csv
+/models/train_meta.csv
+/models/train_signal.csv
+/models/valid_meta.csv
+/models/valid_signal.csv
