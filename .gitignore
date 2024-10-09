@@ -11,3 +11,6 @@ node_modules
 /models/train_signal.csv
 /models/valid_meta.csv
 /models/valid_signal.csv
+/models/ptbxl_database.csv
+/models/age.csv
+/models/data_preprocessor
