@@ -1,0 +1,34 @@
+/* src/components/AboutSection.module.css */
+.aboutSection {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Space between image and text */
+    padding: 2rem; /* Add some padding */
+}
+
+.imageContainer {
+    flex: 1; /* Take 50% of the available width */
+    padding-right: 1rem; /* Space between image and text */
+}
+
+.textContainer {
+    flex: 1; /* Take 50% of the available width */
+    padding-left: 1rem; /* Space between image and text */
+}
+
+.qaboutSection h3 {
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+.aboutSection h2 {
+    margin: 0.5rem 0; /* Margin above and below the subheading */
+}
+
+.aboutSection p {
+    margin: 1rem 0; /* Margin above and below paragraphs */
+}
+
+.servicesList {
+    list-style-type: disc; /* Bullet points for the list */
+    padding-left: 1.5rem; /* Indent the list */
+}

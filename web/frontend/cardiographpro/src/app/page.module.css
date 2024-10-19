@@ -29,7 +29,6 @@
 }
 
 .imageContainer {
-    position: relative; /* Required for Image component to work with layout="fill" */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center image horizontally */
@@ -37,8 +36,27 @@
     width: 50%; /* 50% width for the image */
     height: 80%; /* Full height */
     margin: auto;
+    animation: moveUpDown 2s infinite ease-in-out; /* Animation properties */
 }
 
+.imageContainer {
+    background-image: url(../assets/images/shape-4.png);
+    background-repeat: no-repeat;
+    background-position: top right; /* Center the image */
+}
+
+/* Keyframes for the animation */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    50% {
+        transform: translateY(-12px); /* Move up */
+    }
+    100% {
+        transform: translateY(0); /* Move back to start */
+    }
+}
 .features {
     margin-top: 2rem; /* Add margin between text and features */
 }
@@ -58,6 +76,12 @@
     font-size: 22px; /* Second line text size */
     margin: 0; /* Remove default margin */
     text-align: left;
+}
+
+.textContainer {
+    background-image: url(../assets/images/shape-5.png);
+    background-repeat: no-repeat;
+    background-position-y: 20%;
 }
 
 .banner p {
@@ -114,7 +138,6 @@
     overflow: hidden;
     z-index: 2; /* Ensure the card is above the image */
 }
-
 
 /* Create the red overlay effect */
 .serviceCard::before {
