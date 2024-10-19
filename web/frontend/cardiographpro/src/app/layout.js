@@ -1,6 +1,8 @@
 // src/app/layout.js
 import './globals.css'; // Import global styles
 import Header from '../components/Header'; // Import the Header component
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
 
 export const metadata = {
     title: 'Cardiograph Pro',

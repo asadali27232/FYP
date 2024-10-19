@@ -1,7 +1,14 @@
-// src/app/page.js
 import Image from 'next/image';
 import styles from './page.module.css';
-import bannerSideImage from '../assets/images/banner-img-1.png'; // Adjust the import according to the file extension
+import bannerSideImage from '../assets/images/banner-img-1.png';
+import backgroundShape from '../assets/images/shape-6.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faCalendarCheck,
+    faChartLine,
+    faRobot,
+    faUserMd,
+} from '@fortawesome/free-solid-svg-icons'; // Import relevant icons
 
 export default function HomePage() {
     return (
@@ -12,9 +19,7 @@ export default function HomePage() {
                         Highest level of service you can find
                     </h3>
                     <h2 className={styles.heading}>
-                        Take{' '}
-                        <span>Care of Your</span>{' '}
-                        Health Now.
+                        Take <span>Care of Your</span> Health Now.
                     </h2>
                     <p>
                         Monitor your heart data in real-time with our advanced
@@ -32,31 +37,71 @@ export default function HomePage() {
                 </div>
             </section>
             <section className={styles.services}>
-                <h2 className={styles.heading}>Our Services</h2>
+                {/* Background Image */}
+                <Image
+                    src={backgroundShape}
+                    alt="Background Shape"
+                    className={styles.backgroundImage}
+                    layout="intrinsic"
+                    width={200} // Set the desired width
+                    height={200} // Set the desired height
+                />
+
                 <div className={styles.serviceCards}>
                     <div className={styles.serviceCard}>
-                        <h3>Cardiograph Monitoring</h3>
+                        <div className={styles.icon}>
+                            <FontAwesomeIcon
+                                icon={faCalendarCheck}
+                                size="1x"
+                                className={styles.iconStyle}
+                            />
+                        </div>
+                        <h3>Appointment Booking</h3>
                         <p>
-                            Monitor your heart data in real-time with our
-                            advanced cardiograph tools. Our technology ensures
-                            the most accurate results for effective heart
-                            monitoring.
+                            Easily schedule your appointments with our
+                            user-friendly platform.
                         </p>
                     </div>
                     <div className={styles.serviceCard}>
-                        <h3>Heart Rate Analysis</h3>
+                        <div className={styles.icon}>
+                            <FontAwesomeIcon
+                                icon={faChartLine}
+                                size="1x"
+                                className={styles.iconStyle}
+                            />
+                        </div>
+                        <h3>Prediction</h3>
                         <p>
-                            Analyze your heart rate data with our advanced
-                            tools. Our technology ensures the most accurate
-                            results for effective heart rate analysis.
+                            Get accurate predictions for your health metrics and
+                            trends.
                         </p>
                     </div>
                     <div className={styles.serviceCard}>
-                        <h3>Health Tracking</h3>
+                        <div className={styles.icon}>
+                            <FontAwesomeIcon
+                                icon={faRobot}
+                                size="1x"
+                                className={styles.iconStyle}
+                            />
+                        </div>
+                        <h3>Medical Chatbot</h3>
                         <p>
-                            Track your health data with our advanced tools. Our
-                            technology ensures the most accurate results for
-                            effective health tracking.
+                            Engage with our medical chatbot for instant health
+                            assistance.
+                        </p>
+                    </div>
+                    <div className={styles.serviceCard}>
+                        <div className={styles.icon}>
+                            <FontAwesomeIcon
+                                icon={faUserMd}
+                                size="1x"
+                                className={styles.iconStyle}
+                            />
+                        </div>
+                        <h3>Medical Profiles</h3>
+                        <p>
+                            Create and manage your comprehensive medical
+                            profiles online.
                         </p>
                     </div>
                 </div>
