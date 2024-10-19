@@ -5,13 +5,12 @@ export default function Button({
     children,
     onClick,
     type = 'button',
-    variant = 'primary',
     className,
 }) {
     return (
         <button
             type={type}
-            className={`${styles.button} ${styles[variant]} ${className}`} // Apply the button styles and variant
+            className={`${styles.button} ${className}`} // Apply the button styles
             onClick={onClick}>
             {children}
         </button>

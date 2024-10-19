@@ -74,9 +74,8 @@ const Header = () => {
                     </ul>
                 </nav>
                 <Button
-                    variant="primary"
                     onClick={() => alert('Button clicked!')}>
-                    Get Started
+                    Book Appointment
                 </Button>
             </div>
         </header>

@@ -1,33 +1,48 @@
 /* src/components/Button.module.css */
 .button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
+    width: 200px; /* Fixed width */
+    height: 60px; /* Fixed height */
+    padding: 0.75rem 1.5rem; /* Padding (optional) */
+    font-size: 16px; /* Increased font size */
+    border-radius: 50px; /* Rounded corners */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #dc143c; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    position: relative; /* Position for the splash effect */
+    overflow: hidden; /* Prevent overflow of splash */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color change */
+    outline: none; /* Remove outline */
 }
 
-.primary {
-    background-color: #0070f3;
-    color: white;
-    border: none;
+/* Splash animation */
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Width of splash */
+    height: 300%; /* Height of splash */
+    background-color: rgba(14, 17, 54, 0.7); /* Slightly transparent splash color */
+    border-radius: 50%; /* Circular splash */
+    transform: translate(-50%, -50%) scale(0); /* Center and hide the splash */
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Transition for splash effect */
+    z-index: 0; /* Send splash behind text */
+    opacity: 0; /* Start with no opacity */
 }
 
-.primary:hover {
-    background-color: #005bb5;
+/* Change background color on hover */
+.button:hover {
+    background-color: #0e1136; /* Change button color on hover */
 }
 
-.secondary {
-    background-color: white;
-    color: #0070f3;
-    border: 2px solid #0070f3;
+/* Keep text color white on hover */
+.button:hover {
+    color: rgb(255, 255, 255) !important; /* Keep text color white on hover */
 }
 
-.secondary:hover {
-    background-color: #e0e0e0;
-}
-
-.button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
+/* Show splash on hover */
+.button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Show splash on hover */
+    opacity: 1; /* Make the splash visible */
 }
