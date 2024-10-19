@@ -1,0 +1,73 @@
+/* Styles for the Home Banner Section */
+.banner {
+    display: flex;
+    overflow: hidden; /* Prevent overflow */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    position: relative; /* Position relative for absolute children */
+    background-image: url(../assets/images/home_banner.png);
+    background-size: cover; /* Change to cover for full coverage */
+    background-repeat: no-repeat;
+    background-position: center bottom; /* Centered at the bottom */
+    padding: 0px 70px;
+}
+
+.textContainer {
+    width: 50%; /* 50% width for the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+    align-items: flex-start; /* Align text to the left */
+    padding: 2rem; /* Add padding */
+    background: rgba(
+        255,
+        255,
+        255,
+        0
+    ); /* Optional: Semi-transparent background */
+    color: white; /* Text color */
+}
+
+.imageContainer {
+    position: relative; /* Required for Image component to work with layout="fill" */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center image horizontally */
+    align-items: center;
+    width: 50%; /* 50% width for the image */
+    height: 80%; /* Full height */
+    margin: auto;
+}
+
+.features {
+    margin-top: 2rem; /* Add margin between text and features */
+}
+
+.feature {
+    margin-bottom: 1rem; /* Space between feature items */
+}
+
+.banner h2 {
+    font-size: 60px; /* First line text size */
+    margin: 0; /* Remove default margin */
+    font-weight: 900;
+    text-align: left;
+}
+
+.banner h3 {
+    font-size: 22px; /* Second line text size */
+    margin: 0; /* Remove default margin */
+    text-align: left;
+}
+
+.banner p {
+    font-size: 18px;
+    margin: 1rem 0; /* Margin for the paragraph */
+    text-align: left;
+}
+
+.banner span {
+    color: #dc143c; /* Red color for span */
+    font-weight: 500;
+    border-bottom: 4px solid #dc143c; /* Red underline */
+}
