@@ -1,0 +1,16 @@
+<!-- ecg_app/templates/result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Prediction Results</h2>
+    <h3>Superclass Labels:</h3>
+    <p>{{ superclass_labels }}</p>
+    <h3>Class Names:</h3>
+    <p>{{ class_names }}</p>
+    <h3>ECG Plot:</h3>
+    <img src="{{ plot_url }}" alt="ECG Plot" />
+</body>
+</html>
