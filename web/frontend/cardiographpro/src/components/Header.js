@@ -17,7 +17,7 @@ const Header = () => {
                 <div className={styles.slogan}>
                     <FontAwesomeIcon
                         icon={faLightbulb}
-                        size="lg"
+                        size="sm"
                         style={{ marginRight: '0.5rem' }}
                     />
                     <span>Your Health, Our Passion</span> {/* Slogan */}
@@ -61,6 +61,7 @@ const Header = () => {
                         <li className={styles.navItem}>
                             <a href="/contact">Contact</a>
                         </li>
+                        {/* Remove duplicates for clarity */}
                     </ul>
                 </nav>
                 <Button
