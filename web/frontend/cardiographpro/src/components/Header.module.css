@@ -1,32 +1,60 @@
 .header {
-    background-color: #f8f8f8; /* Light background color */
-    border-bottom: 1px solid #ddd; /* Bottom border */
+    background-color: #f8f9fa; /* Light background for bottom header */
+    padding: 0; /* Remove padding for full-width effect */
+    border-bottom: 2px solid #e0e0e0; /* Subtle bottom border */
+    font-family: 'Arial', sans-serif; /* Set a specific font */
 }
 
 .topHeader {
+    background-color: #0e1136; /* Dark background color */
+    color: white; /* Text color */
+    padding: 30px 50px; /* Inner padding for top header */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between tagline and social links */
     align-items: center;
-    padding: 20px;
+    width: 100%; /* Full width */
 }
 
-.topHeader nav ul {
-    list-style: none; /* Remove bullets */
-    display: flex;
-    gap: 20px; /* Space between links */
+.contactInfo {
+    display: flex; /* Flex for horizontal layout */
+    align-items: center; /* Align items vertically */
+    gap: 2rem; /* Space between elements */
 }
 
-.topHeader nav a {
+.socialLinks a {
+    margin-left: 1.5rem; /* Increased spacing between social links */
     text-decoration: none; /* Remove underline */
-    color: #333; /* Dark text color */
+    color: #ffffff; /* White color for social links */
+    font-size: 0.9rem; /* Font size for social links */
+}
+
+.socialLinks a:hover {
+    color: #ffcc00; /* Optional: Change color on hover */
 }
 
 .bottomHeader {
-    background-color: #eee; /* Slightly darker background for bottom header */
-    padding: 10px;
-    text-align: center; /* Center text */
+    display: flex;
+    justify-content: space-between; /* Space between elements */
+    align-items: center;
+    margin-top: 10px; /* Spacing from top header */
 }
 
-.bottomHeader p {
+.bottomHeader h1 {
     margin: 0; /* Remove default margin */
+}
+
+/* Scoped styles for nav and its ul */
+.nav {
+    display: flex; /* Flex for horizontal layout */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.navItem {
+    margin-right: 20px; /* Spacing between nav links */
+}
+
+.navItem a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Link color */
 }
