@@ -1,8 +1,8 @@
 // src/app/layout.js
 import './globals.css'; // Import global styles
 import Header from '../components/Header'; // Import the Header component
+import Footer from '../components/Footer'; // Import the Footer component
 import '@fortawesome/fontawesome-svg-core/styles.css';
-
 
 export const metadata = {
     title: 'Cardiograph Pro',
@@ -15,12 +15,7 @@ export default function RootLayout({ children }) {
             <body>
                 <Header /> {/* Include the Header component */}
                 <main>{children}</main>
-                <footer>
-                    <p>
-                        &copy; {new Date().getFullYear()} Cardiograph Pro. All
-                        rights reserved.
-                    </p>
-                </footer>
+                <Footer /> {/* Include the Footer component */}
             </body>
         </html>
     );

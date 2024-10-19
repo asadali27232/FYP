@@ -47,6 +47,7 @@
 .bottomHeader h1 {
     margin: 0; /* Remove default margin */
     font-size: 1.8rem; /* Set a responsive font size for the logo */
+    font-weight: 600; /* Set font weight */
 }
 
 /* Assuming you have this in Header.module.css */
