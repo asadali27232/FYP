@@ -1,8 +1,9 @@
 // src/app/layout.js
 import './globals.css'; // Import global styles
+import Header from '../components/Header'; // Import the Header component
 
 export const metadata = {
-    title: 'Cardiograph Pro', // You can customize the title
+    title: 'Cardiograph Pro',
     description: 'A clean and simple layout for Cardiograph Pro',
 };
 
@@ -10,24 +11,8 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                <header>
-                    <nav>
-                        <h1>Cardiograph Pro</h1>
-                        <ul>
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="/about">About</a>
-                            </li>
-                            <li>
-                                <a href="/contact">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </header>
-                <main>{children}</main>{' '}
-                {/* Main content will be rendered here */}
+                <Header /> {/* Include the Header component */}
+                <main>{children}</main>
                 <footer>
                     <p>
                         &copy; {new Date().getFullYear()} Cardiograph Pro. All

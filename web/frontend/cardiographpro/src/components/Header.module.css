@@ -1,0 +1,32 @@
+.header {
+    background-color: #f8f8f8; /* Light background color */
+    border-bottom: 1px solid #ddd; /* Bottom border */
+}
+
+.topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.topHeader nav ul {
+    list-style: none; /* Remove bullets */
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+.topHeader nav a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark text color */
+}
+
+.bottomHeader {
+    background-color: #eee; /* Slightly darker background for bottom header */
+    padding: 10px;
+    text-align: center; /* Center text */
+}
+
+.bottomHeader p {
+    margin: 0; /* Remove default margin */
+}
