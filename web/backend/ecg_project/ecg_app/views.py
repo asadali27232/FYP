@@ -13,7 +13,7 @@ from .utils.ptbxl_dataset_preprocessor import PTBXLDatasetPreprocesser
 from .utils.ECGClassifier import ECGClassifier
 
 def uploadpage(request):
-    return render(request, 'upload.html')  # Replace 'home.html' with your actual template
+    return render(request, 'upload.html')  
 
 def handle_uploaded_file(hea_file, dat_file):
     # Save the uploaded files to the media directory
@@ -70,8 +70,8 @@ def plot_ecg_with_annotations(X_df, age, gender, superclass_labels, class_names,
     plt.close()  # Close the plot to free up memory
 
 def predict_ecg(request):
-    # Load actual age data (assuming it is in a CSV file)
-    actual_age_data = pd.read_csv(r'D:\Semester 7\django\ecg_project\age.csv')  # Update the path accordingly
+    # Load actual age data 
+    actual_age_data = pd.read_csv(r'D:\Semester 7\django\ecg_project\age.csv')  
 
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
