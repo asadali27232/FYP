@@ -1,9 +1,19 @@
 // src/app/about/page.js
 import styles from './about.module.css'; // Import the CSS module
+import ImageComponent from '../../components/ImageComponent';
+import aboutBanner from '../../assets/images/about-banner.jpg';
 
 export default function AboutPage() {
     return (
         <section className={styles.section}>
+            <div className={styles.about}>
+                <h1>About Us</h1>
+                <ImageComponent
+                    src={aboutBanner}
+                    alt="About Us Banner"
+                    width={'600%'}
+                />
+            </div>
             <h2 className={styles.heading}>About Us</h2>
             <p className={styles.text}>Asad Ali - Full Stack Developer</p>
 
