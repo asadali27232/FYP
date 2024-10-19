@@ -56,10 +56,19 @@ const Header = () => {
                             <a href="/">Home</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/about">About</a>
+                            <a href="/">About Us</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/contact">Contact</a>
+                            <a href="/">Services</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="/">Prediction</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="/about">Appointment</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="/contact">Chatbot</a>
                         </li>
                         {/* Remove duplicates for clarity */}
                     </ul>

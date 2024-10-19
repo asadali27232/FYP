@@ -46,7 +46,7 @@
 
 .bottomHeader h1 {
     margin: 0; /* Remove default margin */
-    font-size: 2rem; /* Set a responsive font size for the logo */
+    font-size: 1.8rem; /* Set a responsive font size for the logo */
 }
 
 /* Assuming you have this in Header.module.css */
@@ -67,7 +67,7 @@
 .navItem a {
     text-decoration: none; /* Remove underline from links */
     color: #000000; /* Link color */
-    font-size: 1.2rem; /* Set font size for nav links */
+    font-size: 1.3rem; /* Set font size for nav links */
     position: relative; /* Set position to relative for absolute positioning of the circle */
     z-index: 1; /* Ensure text is above the circle */
     transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transitions for color and font size */
@@ -75,13 +75,12 @@
 
 /* Add this if you want to control the space between nav items */
 .navItem + .navItem {
-    margin-left: 20px; /* Adjust margin as needed */
+    margin-left: 30px; /* Adjust margin as needed */
 }
-
 
 .navItem a:hover {
     color: #dc143c; /* Change color on hover */
-    font-size: 1.2rem; /* Increase font size on hover */
+    font-size: 1.3rem; /* Increase font size on hover */
 }
 
 /* Circle effect */
@@ -89,13 +88,13 @@
     content: ''; /* Create a pseudo-element */
     position: absolute; /* Position it absolutely */
     top: 50%; /* Center it vertically */
-    left: 50%; /* Center it horizontally */
+    left: 10%; /* Center it horizontally */
     width: 40px; /* Size for the expanding effect */
     height: 40px; /* Size for the expanding effect */
     background-color: rgba(220, 20, 60, 0.205); /* Semi-transparent red */
     border-radius: 50%; /* Make it circular */
     transform: translate(-50%, -50%) scale(0); /* Start hidden */
-    transition: transform 0.4s ease; /* Smooth transition for the scale */
+    transition: transform 0.5s ease; /* Smooth transition for the scale */
     z-index: 0; /* Position below the text */
 }
 
