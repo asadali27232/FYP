@@ -9,6 +9,7 @@ import {
     faRobot,
     faUserMd,
 } from '@fortawesome/free-solid-svg-icons'; // Import relevant icons
+import AboutSection from '../components/AboutSection';
 
 export default function HomePage() {
     return (
@@ -56,7 +57,7 @@ export default function HomePage() {
                                 className={styles.iconStyle}
                             />
                         </div>
-                        <h3>Appointment Booking</h3>
+                        <h3>Appointment</h3>
                         <p>
                             Easily schedule your appointments with our
                             user-friendly platform.
@@ -84,7 +85,7 @@ export default function HomePage() {
                                 className={styles.iconStyle}
                             />
                         </div>
-                        <h3>Medical Chatbot</h3>
+                        <h3>Chatbot</h3>
                         <p>
                             Engage with our medical chatbot for instant health
                             assistance.
@@ -98,7 +99,7 @@ export default function HomePage() {
                                 className={styles.iconStyle}
                             />
                         </div>
-                        <h3>Medical Profiles</h3>
+                        <h3>Profiles</h3>
                         <p>
                             Create and manage your comprehensive medical
                             profiles online.
@@ -106,6 +107,8 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
+
+            <AboutSection />
         </div>
     );
 }
