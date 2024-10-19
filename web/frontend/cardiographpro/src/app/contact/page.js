@@ -1,22 +1,25 @@
-// src/app/contact.js
+// src/app/contact/page.js
+import styles from './contact.module.css'; // Import the CSS module
+
 export default function ContactPage() {
     return (
-        <section>
-            <h2>Contact Us</h2>
-            <p>
-                If you have any questions or need support, feel free to contact
-                us:
-            </p>
+        <section className={styles.section}>
+            <h2 className={styles.heading}>Contact Us</h2>
+            <p className={styles.text}>Asad Ali Developer</p>
 
-            <ul>
-                <li>
+            <ul className={styles.list}>
+                <li className={styles.listItem}>
                     Email:{' '}
-                    <a href="mailto:support@cardiographpro.com">
+                    <a
+                        className={styles.link}
+                        href="mailto:support@cardiographpro.com">
                         support@cardiographpro.com
                     </a>
                 </li>
-                <li>Phone: (123) 456-7890</li>
-                <li>Address: 123 Heartbeat Lane, Health City, HC 12345</li>
+                <li className={styles.listItem}>Phone: (123) 456-7890</li>
+                <li className={styles.listItem}>
+                    Address: 123 Heartbeat Lane, Health City, HC 12345
+                </li>
             </ul>
         </section>
     );
