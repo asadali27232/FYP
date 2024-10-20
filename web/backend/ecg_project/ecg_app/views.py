@@ -13,8 +13,6 @@ from .utils.ptbxl_dataset_preprocessor import PTBXLDatasetPreprocesser
 from .utils.ECGClassifier import ECGClassifier
 from django.http import JsonResponse
 from django.middleware.csrf import get_token
-from django.http import JsonResponse
-from django.middleware.csrf import get_token
 
 
 def csrf_token_view(request):
@@ -50,10 +48,8 @@ def handle_uploaded_file(hea_file, dat_file):
 def normalize_age(user_age, actual_age_data):
     min_age = actual_age_data['age'].min()  # Assuming 'age' is the column name
     max_age = actual_age_data['age'].max()
-
-    # Normalize the age
-    normalized = (user_age - min_age) / (max_age - min_age)
-
+    normalized = (user_age - min_age) / \
+        (max_age - min_age)  # Normalize the age
     return normalized  # Return normalized value
 
 
@@ -81,8 +77,6 @@ def plot_ecg_with_annotations(X_df, age, gender, superclass_labels, class_names,
         axes[i].set_xlabel('')  # Remove x-axis label
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-
-    # Save the plot as an image file
     plt.savefig(filename)
     plt.close()  # Close the plot to free up memory
 
@@ -98,10 +92,8 @@ def predict_ecg(request):
             hea_file = request.FILES['hea_file']
             dat_file = request.FILES['dat_file']
             age = form.cleaned_data['age']
-            gender = form.cleaned_data['gender']
-
             # Convert gender to integer
-            gender = int(gender)
+            gender = int(form.cleaned_data['gender'])
 
             # Save files
             hea_path, dat_path = handle_uploaded_file(hea_file, dat_file)
@@ -150,8 +142,10 @@ def predict_ecg(request):
 
             # Extract superclass labels
             superclass_labels, class_names = extract_superclass_labels(pred)
-            print("Superclass Labels:", superclass_labels)
-            print("Class Names:", class_names)
+
+            # Convert labels and class names to lists for JSON serialization
+            superclass_labels = superclass_labels.tolist()
+            class_names = class_names
 
             # Plot ECG
             plot_filename = os.path.join(
@@ -167,8 +161,5 @@ def predict_ecg(request):
             }
 
             return JsonResponse(response_data)
-
-    else:
-        form = UploadFileForm()
 
     return JsonResponse({'error': 'Invalid request'}, status=400)
