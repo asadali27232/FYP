@@ -3,32 +3,88 @@
     display: flex;
     align-items: center; /* Center content vertically */
     justify-content: space-between; /* Space between image and text */
-    padding: 2rem; /* Add some padding */
+    padding: 100px 150px; /* Add some padding */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2),
+        /* Top shadow */ 0 4px 10px rgba(0, 0, 0, 0.2); /* Bottom shadow */
+    margin-bottom: 50px;
+    background-image: url('../assets/images/shape-10.png'); /* Assuming you want this as a background */
+    background-position: top right;
+    background-repeat: no-repeat;
+    height: 110vh;
 }
 
 .imageContainer {
     flex: 1; /* Take 50% of the available width */
-    padding-right: 1rem; /* Space between image and text */
+    height: 100%; /* Set a height for the container */
+    background-image: url('../assets/images/about-1.jpg'); /* Set your background image here */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    margin: 100px 0;
 }
 
 .textContainer {
     flex: 1; /* Take 50% of the available width */
-    padding-left: 1rem; /* Space between image and text */
+    padding-left: 5rem; /* Space between image and text */
 }
 
-.qaboutSection h3 {
+.aboutSection h3 {
     margin-bottom: 1rem; /* Space below the heading */
+    color: #dc143c;
+    font-size: 24px;
 }
 
 .aboutSection h2 {
+    background-image: url('../assets/images/shape-8.png');
+    background-position: top right;
+    background-repeat: no-repeat;
     margin: 0.5rem 0; /* Margin above and below the subheading */
+    font-size: 50px;
+    font-weight: 700;
+    color: #101a30;
 }
 
 .aboutSection p {
+    margin: 1.2rem 0; /* Margin above and below paragraphs */
+    font-size: 16px;
+    color: #101a30;
+    font-weight: 500;
+}
+
+.aboutSection p:nth-child(4) {
     margin: 1rem 0; /* Margin above and below paragraphs */
+    font-size: 16px;
+    color: #676767;
+    font-weight: 400;
+    line-height: 2;
 }
 
 .servicesList {
     list-style-type: disc; /* Bullet points for the list */
     padding-left: 1.5rem; /* Indent the list */
+}
+
+.icon {
+    margin-bottom: 10px;
+}
+
+.listContainer {
+    background-image: url('../assets/images/shape-11.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+
+    height: fit-content;
+    display: flex; /* Arrange list items horizontally */
+    justify-content: space-evenly; /* Space between list items */
+    flex-direction: column;
+}
+
+.listItem {
+    display: flex; /* Arrange icon and text horizontally */
+    align-items: center; /* Vertically align content */
+    margin-bottom: 12px; /* Space below the paragraph */
+}
+
+.listItem p {
+    margin: 0;
+    font-weight: 500;
 }

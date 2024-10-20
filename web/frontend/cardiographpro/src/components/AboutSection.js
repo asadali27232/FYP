@@ -1,19 +1,21 @@
 // src/components/AboutSection.js
-import Image from 'next/image';
+'use client'; // This marks the component as a Client Component
 import styles from './AboutSection.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import {
+    faMapMarkerAlt,
+    faPhone,
+    faEnvelope,
+    faCheck,
+} from '@fortawesome/free-solid-svg-icons';
+import Button from './Button';
 
 const AboutSection = () => {
     return (
         <section className={styles.aboutSection}>
             <div className={styles.imageContainer}>
-                <Image
-                    src="/path/to/your/image.jpg"
-                    alt="About Us"
-                    className={styles.image}
-                    layout="responsive"
-                    width={500} // Adjust the width as needed
-                    height={300} // Adjust the height as needed
-                />
+                {/* The image will be set as a background in CSS */}
             </div>
             <div className={styles.textContainer}>
                 <h3>About Us</h3>
@@ -27,13 +29,37 @@ const AboutSection = () => {
                     do amet sint. Velit officia consequat duis enim velit
                     mollit. Exercitation veniam consequat sunt nostrud amet.
                 </p>
-                <ul className={styles.servicesList}>
-                    <li>Ambulance Services</li>
-                    <li>Oxygen on Wheel</li>
-                    <li>Pharmacy on Clinic</li>
-                    <li>On duty Doctors</li>
-                    <li>24/7 Medical Emergency</li>
-                </ul>
+                <div className={styles.listContainer}>
+                    <div className={styles.listItem}>
+                        <FontAwesomeIcon
+                            icon={faCheck}
+                            size="lg"
+                            style={{ marginRight: '1rem', color: '#dc143c' }}
+                        />
+                        <p>Ambulance Services</p>
+                    </div>
+                    <div className={styles.listItem}>
+                        <FontAwesomeIcon
+                            icon={faCheck}
+                            size="lg"
+                            style={{ marginRight: '1rem', color: '#dc143c' }}
+                        />
+                        <p>Oxygen on Wheel</p>
+                    </div>
+                    <div className={styles.listItem}>
+                        <FontAwesomeIcon
+                            icon={faCheck}
+                            size="lg"
+                            style={{ marginRight: '1rem', color: '#dc143c' }}
+                        />
+                        <p>Pharmacy on Clinic</p>
+                    </div>
+                    <div style={{marginTop: '20px'}}>
+                        <Button onClick={() => alert('Button clicked!')}>
+                            Learn More
+                        </Button>
+                    </div>
+                </div>
             </div>
         </section>
     );
