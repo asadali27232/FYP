@@ -1,7 +1,8 @@
 'use client'; // This marks the component as a Client Component
 import { useState } from 'react';
+import Image from 'next/image'; // Importing the Image component
 
-const Upload = () => {
+const UploadSignals = () => {
     const [heaFile, setHeaFile] = useState(null);
     const [datFile, setDatFile] = useState(null);
     const [age, setAge] = useState('');
@@ -94,13 +95,31 @@ const Upload = () => {
                 <div>
                     <h2>Prediction Results</h2>
                     <h3>Superclass Labels:</h3>
-                    <p>{result.superclassLabels}</p>
+                    <ul>
+                        {result.superclass_labels.map((label, index) => (
+                            <li key={index}>{`Label ${
+                                index + 1
+                            }: ${label}`}</li>
+                        ))}
+                    </ul>
                     <h3>Class Names:</h3>
-                    <p>{JSON.stringify(result.classNames)}</p>
+                    <ul>
+                        {result.class_names.map((name, index) => (
+                            <li key={index}>{name}</li>
+                        ))}
+                    </ul>
+                    <h3>ECG Image:</h3>
+                    <Image
+                        src={result.image_url}
+                        alt="ECG Plot"
+                        width={800} // Adjust width as needed
+                        height={400} // Adjust height as needed
+                        style={{ maxWidth: '100%', height: 'auto' }} // Maintain aspect ratio
+                    />
                 </div>
             )}
         </div>
     );
 };
 
-export default Upload;
+export default UploadSignals;
