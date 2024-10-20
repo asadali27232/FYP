@@ -13,11 +13,15 @@ from .utils.ptbxl_dataset_preprocessor import PTBXLDatasetPreprocesser
 from .utils.ECGClassifier import ECGClassifier
 from django.http import JsonResponse
 from django.middleware.csrf import get_token
+from django.http import JsonResponse
+from django.middleware.csrf import get_token
 
 
 def csrf_token_view(request):
-    csrf_token = get_token(request)
-    return JsonResponse({'csrfToken': csrf_token})
+    token = get_token(request)
+    response = JsonResponse({'csrfToken': token})
+    response.set_cookie('csrftoken', token)  # Set CSRF token as a cookie
+    return response
 
 
 def uploadpage(request):
@@ -103,7 +107,6 @@ def predict_ecg(request):
             hea_path, dat_path = handle_uploaded_file(hea_file, dat_file)
 
             # Load raw ECG data
-            # .dat file without extension
             record = wfdb.rdrecord(dat_path.split('.')[0])
             X = record.p_signal  # ECG data
 
@@ -156,12 +159,16 @@ def predict_ecg(request):
             plot_ecg_with_annotations(
                 X_df, age, gender, superclass_labels, class_names, plot_filename)
 
-            return render(request, 'result.html', {
+            # Construct the response
+            response_data = {
                 'superclass_labels': superclass_labels,
                 'class_names': class_names,
-                'plot_url': plot_filename
-            })
+                'image_url': request.build_absolute_uri(settings.MEDIA_URL + 'uploads/ecg_image.png')
+            }
+
+            return JsonResponse(response_data)
+
     else:
         form = UploadFileForm()
 
-    return render(request, 'upload.html', {'form': form})
+    return JsonResponse({'error': 'Invalid request'}, status=400)

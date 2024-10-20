@@ -1,5 +1,5 @@
 'use client'; // This marks the component as a Client Component
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Upload = () => {
     const [heaFile, setHeaFile] = useState(null);
@@ -8,24 +8,6 @@ const Upload = () => {
     const [gender, setGender] = useState('0');
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [csrfToken, setCsrfToken] = useState('');
-
-    // Fetch the CSRF token on component mount
-    useEffect(() => {
-        const fetchCsrfToken = async () => {
-            const response = await fetch(
-                'http://127.0.0.1:8000/get-csrf-token/'
-            );
-            if (!response.ok) {
-                console.error('Failed to fetch CSRF token');
-                return;
-            }
-            const data = await response.json();
-            setCsrfToken(data.csrfToken);
-        };
-
-        fetchCsrfToken();
-    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,10 +23,7 @@ const Upload = () => {
             const response = await fetch('http://127.0.0.1:8000/upload/', {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'X-CSRFToken': csrfToken, // Include the CSRF token
-                },
-                credentials: 'include', // Include cookies with the request
+                credentials: 'include',
             });
 
             if (!response.ok) {

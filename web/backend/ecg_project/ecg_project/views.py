@@ -4,5 +4,7 @@ from django.middleware.csrf import get_token
 
 
 def csrf_token_view(request):
-    csrf_token = get_token(request)
-    return JsonResponse({'csrfToken': csrf_token})
+    token = get_token(request)
+    response = JsonResponse({'csrfToken': token})
+    response.set_cookie('csrftoken', token)  # Set CSRF token as a cookie
+    return response
