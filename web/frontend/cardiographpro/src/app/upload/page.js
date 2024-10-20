@@ -24,11 +24,17 @@ const Upload = () => {
         formData.append('gender', gender);
 
         try {
-            // Send a POST request to the API route
-            const response = await fetch('/api/upload', {
+            // Send a POST request to the Django server
+            const response = await fetch('http://127.0.0.1:8000/upload/', {
+                // Update the URL here
                 method: 'POST',
                 body: formData,
             });
+
+            // Check if the response is okay (status code in the range 200-299)
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
 
             // Parse the JSON response
             const data = await response.json();

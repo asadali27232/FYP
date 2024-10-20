@@ -1,5 +1,6 @@
-import nextConnect from 'next-connect';
+import { NextResponse } from 'next/server';
 import multer from 'multer';
+import nextConnect from 'next-connect'; // Change this line
 
 // Set up multer for file uploads
 const upload = multer({
@@ -14,7 +15,7 @@ const upload = multer({
 });
 
 // Create a Next.js API route handler
-const handler = nextConnect();
+const handler = nextConnect(); // Ensure this remains unchanged
 
 // Handle POST request with multer
 handler
