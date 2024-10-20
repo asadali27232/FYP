@@ -1,0 +1,84 @@
+.whyChooseUs {
+  background-color: #1e294a;
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: left;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.content {
+  max-width: 50%;
+}
+
+.subTitle {
+  color: #e63946;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.mainTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #29314e;
+  border-radius: 8px;
+}
+
+.icon {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.serviceTitle {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.imageSection {
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.statsSection {
+  display: flex;
+  justify-content: space-around;
+  background: #f8f9fa;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+.statsItem {
+  text-align: center;
+}
+
+.statsNumber {
+  font-size: 2.5rem;
+  color: #1e294a;
+  margin-bottom: 0.5rem;
+}
+
+.statsLabel {
+  color: #999;
+  font-size: 1rem;
+}

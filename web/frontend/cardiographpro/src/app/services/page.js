@@ -5,7 +5,7 @@ import Banner from '../../components/Banner'; // Import the Banner component
 export default function AboutPage() {
     return (
         <section>
-            <Banner heading="About Us" breadcrumb="Services Details" />
+            <Banner heading="Our Services" breadcrumb="Services" />
         </section>
     );
 }

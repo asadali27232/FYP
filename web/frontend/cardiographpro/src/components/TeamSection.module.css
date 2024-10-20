@@ -1,0 +1,16 @@
+/* Custom CSS for image zoom-out effect */
+.card-container {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-container:hover {
+    transform: scale(0.9); /* Zoom out effect */
+}
+
+.card-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-image:hover {
+    transform: scale(1.1); /* Optional: Zoom in the image on hover */
+}

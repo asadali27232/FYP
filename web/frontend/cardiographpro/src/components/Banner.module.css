@@ -1,0 +1,43 @@
+.bannerContainer {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url(../assets/images/home_banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.bannerContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+}
+
+.bannerTitle {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.breadcrumb {
+    font-size: 1.2rem;
+    color: #fff; /* General color for the breadcrumb */
+}
+
+.breadcrumb .home {
+    color: #f44336; /* Red color for 'Home' */
+}

@@ -56,25 +56,24 @@ const Header = () => {
                             <a href="/">Home</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/">About Us</a>
+                            <a href="/about">About Us</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/">Services</a>
+                            <a href="/services">Services</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/">Prediction</a>
+                            <a href="/prediction">Prediction</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/about">Appointment</a>
+                            <a href="/appointment">Appointment</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/contact">Chatbot</a>
+                            <a href="/chatbot">Chatbot</a>
                         </li>
                         {/* Remove duplicates for clarity */}
                     </ul>
                 </nav>
-                <Button
-                    onClick={() => alert('Button clicked!')}>
+                <Button onClick={() => alert('Button clicked!')}>
                     Book Appointment
                 </Button>
             </div>
