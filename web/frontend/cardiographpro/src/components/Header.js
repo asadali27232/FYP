@@ -7,7 +7,8 @@ import {
     faTwitter,
     faInstagram,
 } from '@fortawesome/free-brands-svg-icons'; // Importing social media icons
-import { faLightbulb } from '@fortawesome/free-solid-svg-icons'; // Importing the lightbulb icon for the slogan
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image'; // Importing the Image component
 
 const Header = () => {
     return (
@@ -49,7 +50,17 @@ const Header = () => {
 
             {/* Bottom Header for logo and navigation */}
             <div className={styles.bottomHeader}>
-                <h1>Cardiograph Pro</h1>
+                <div className={styles.logo}>
+                    <a href="/">
+                        <Image
+                            src="/logo.png"
+                            alt="Cardiograph Pro"
+                            layout="responsive"
+                            width={150}
+                            height={150}
+                        />
+                    </a>
+                </div>
                 <nav>
                     <ul className={styles.nav}>
                         <li className={styles.navItem}>

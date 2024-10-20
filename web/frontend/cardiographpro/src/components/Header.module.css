@@ -49,7 +49,12 @@
     font-size: 1.8rem; /* Set a responsive font size for the logo */
     font-weight: 600; /* Set font weight */
 }
-
+.logo {
+    display: flex; /* Flex for horizontal layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 200px; /* Set width */
+}
 /* Assuming you have this in Header.module.css */
 .nav {
     display: flex; /* Use flexbox for the nav */
