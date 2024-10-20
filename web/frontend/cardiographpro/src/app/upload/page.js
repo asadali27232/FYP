@@ -1,20 +1,35 @@
 'use client'; // This marks the component as a Client Component
-import { useState } from 'react';
-import Image from 'next/image'; // Import the Image component from next/image
+import { useState, useEffect } from 'react';
 
 const Upload = () => {
-    // State variables for form inputs and results
     const [heaFile, setHeaFile] = useState(null);
     const [datFile, setDatFile] = useState(null);
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('0');
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [csrfToken, setCsrfToken] = useState('');
 
-    // Function to handle form submission
+    // Fetch the CSRF token on component mount
+    useEffect(() => {
+        const fetchCsrfToken = async () => {
+            const response = await fetch(
+                'http://127.0.0.1:8000/get-csrf-token/'
+            );
+            if (!response.ok) {
+                console.error('Failed to fetch CSRF token');
+                return;
+            }
+            const data = await response.json();
+            setCsrfToken(data.csrfToken);
+        };
+
+        fetchCsrfToken();
+    }, []);
+
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent the default form submission
-        setLoading(true); // Set loading state to true
+        e.preventDefault();
+        setLoading(true);
 
         const formData = new FormData();
         formData.append('hea_file', heaFile);
@@ -23,14 +38,13 @@ const Upload = () => {
         formData.append('gender', gender);
 
         try {
-            const csrfToken = getCookie('csrftoken'); // Function to get CSRF token
-
             const response = await fetch('http://127.0.0.1:8000/upload/', {
                 method: 'POST',
                 body: formData,
                 headers: {
                     'X-CSRFToken': csrfToken, // Include the CSRF token
                 },
+                credentials: 'include', // Include cookies with the request
             });
 
             if (!response.ok) {
@@ -38,31 +52,12 @@ const Upload = () => {
             }
 
             const data = await response.json();
-            setResult(data); // Set the result to state
+            setResult(data);
         } catch (error) {
             console.error('Error uploading files:', error);
         } finally {
-            setLoading(false); // Reset loading state
+            setLoading(false);
         }
-    };
-
-    // Function to get CSRF token from cookies
-    const getCookie = (name) => {
-        let cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                // Check if this cookie string begins with the name we want
-                if (cookie.substring(0, name.length + 1) === name + '=') {
-                    cookieValue = decodeURIComponent(
-                        cookie.substring(name.length + 1)
-                    );
-                    break;
-                }
-            }
-        }
-        return cookieValue;
     };
 
     return (
@@ -79,7 +74,6 @@ const Upload = () => {
                         onChange={(e) => setHeaFile(e.target.files[0])}
                     />
                 </p>
-
                 <p>
                     <label htmlFor="id_dat_file">Select .dat file:</label>
                     <input
@@ -90,20 +84,17 @@ const Upload = () => {
                         onChange={(e) => setDatFile(e.target.files[0])}
                     />
                 </p>
-
                 <p>
                     <label htmlFor="id_age">Enter Age:</label>
                     <input
                         type="number"
                         name="age"
-                        step="any"
                         required
                         id="id_age"
                         value={age}
                         onChange={(e) => setAge(e.target.value)}
                     />
                 </p>
-
                 <p>
                     <label htmlFor="id_gender">Select Gender:</label>
                     <select
@@ -119,9 +110,7 @@ const Upload = () => {
                     Upload
                 </button>
             </form>
-            {loading && <p>Loading...</p>}{' '}
-            {/* Show loading message while uploading */}
-            {/* Display results if available */}
+            {loading && <p>Loading...</p>}
             {result && (
                 <div>
                     <h2>Prediction Results</h2>
@@ -129,15 +118,6 @@ const Upload = () => {
                     <p>{result.superclassLabels}</p>
                     <h3>Class Names:</h3>
                     <p>{JSON.stringify(result.classNames)}</p>
-                    <h3>ECG Plot:</h3>
-                    {/* Use Image component instead of img */}
-                    <Image
-                        src={result.ecgPlotUrl} // Path to the ECG plot
-                        alt="ECG Plot"
-                        width={500} // Set width for the image
-                        height={300} // Set height for the image
-                        layout="responsive" // Use responsive layout
-                    />
                 </div>
             )}
         </div>
