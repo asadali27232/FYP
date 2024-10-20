@@ -16,7 +16,6 @@ const Upload = () => {
         e.preventDefault(); // Prevent the default form submission
         setLoading(true); // Set loading state to true
 
-        // Create a FormData object to hold the form data
         const formData = new FormData();
         formData.append('hea_file', heaFile);
         formData.append('dat_file', datFile);
@@ -24,19 +23,20 @@ const Upload = () => {
         formData.append('gender', gender);
 
         try {
-            // Send a POST request to the Django server
+            const csrfToken = getCookie('csrftoken'); // Function to get CSRF token
+
             const response = await fetch('http://127.0.0.1:8000/upload/', {
-                // Update the URL here
                 method: 'POST',
                 body: formData,
+                headers: {
+                    'X-CSRFToken': csrfToken, // Include the CSRF token
+                },
             });
 
-            // Check if the response is okay (status code in the range 200-299)
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
 
-            // Parse the JSON response
             const data = await response.json();
             setResult(data); // Set the result to state
         } catch (error) {
@@ -44,6 +44,25 @@ const Upload = () => {
         } finally {
             setLoading(false); // Reset loading state
         }
+    };
+
+    // Function to get CSRF token from cookies
+    const getCookie = (name) => {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Check if this cookie string begins with the name we want
+                if (cookie.substring(0, name.length + 1) === name + '=') {
+                    cookieValue = decodeURIComponent(
+                        cookie.substring(name.length + 1)
+                    );
+                    break;
+                }
+            }
+        }
+        return cookieValue;
     };
 
     return (

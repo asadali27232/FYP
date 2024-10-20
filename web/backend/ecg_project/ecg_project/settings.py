@@ -50,6 +50,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+# If using CSRF with token authentication, include this
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",  # Add your Next.js app URL for CSRF
 ]
 
 CORS_ALLOWED_ORIGINS = [

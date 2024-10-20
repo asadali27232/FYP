@@ -11,6 +11,13 @@ from django.conf import settings
 from .forms import UploadFileForm
 from .utils.ptbxl_dataset_preprocessor import PTBXLDatasetPreprocesser
 from .utils.ECGClassifier import ECGClassifier
+from django.http import JsonResponse
+from django.middleware.csrf import get_token
+
+
+def csrf_token_view(request):
+    csrf_token = get_token(request)
+    return JsonResponse({'csrfToken': csrf_token})
 
 
 def uploadpage(request):
