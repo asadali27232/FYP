@@ -2,121 +2,217 @@
     width: 100%;
     height: auto;
     padding: 40px 0;
-    background-image: url(../assets/images/shape-35.png);
-    background-position: top right;
-    background-repeat: no-repeat;
+    background-image: url(../assets/images/shape-35.png),
+        url(../assets/images/shape-4.png);
+    background-position: top right, bottom left;
+    background-repeat: no-repeat, no-repeat;
 }
+
 .mainHeading {
     text-align: center;
     font-size: 2em;
     margin-bottom: 20px;
 }
+
 .mainContainer {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
     width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for container */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid #0e11361f;
+    background-image: url(../assets/images/shape-2.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
 
-.leftContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
+.leftContainer,
 .rightContainer {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 15px;
     background-color: #f8f9fa;
+    padding: 30px;
     border-radius: 8px;
-    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.116); /* Add shadow to divs */
+    border: 1px solid #16151507;
+}
+.rightContainer {
+    background-image: url(../assets/images/shape-35.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.rightContainer {
+    background-image: url(../assets/images/shape-6.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+.mainContainer {
+    background-image: url(../assets/images/shape-535.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.loading {
+    text-align: center;
+    color: #0e1136;
+    font-weight: bold;
 }
 
 .fullWidthContainer h2 {
-    text-align: center;
+    font-size: 1.8em;
+    color: #0e1136; /* Accent color for headings */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0e1136; /* Underline effect */
+    padding-bottom: 10px;
+}
+
+.resultContainer h3 {
+    font-size: 1.4em;
     color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.resultContainer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resultContainer li {
+    font-size: 1.2em;
+    color: #555;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.resultContainer li:last-child {
+    border-bottom: none; /* Remove bottom border for last item */
+}
+
+.resultContainer .icon {
+    margin-right: 15px;
+    color: #0e1136;
+    background: url(../assets/images/check.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.parentEcgImageContainer {
+    min-height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    gap: 20px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.ecgImageContainer {
+    width: 80%;
+    height: fit-content;
+    background-color: white;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(../assets/images/shape-2.png),
+        url(../assets/images/shape-19.png), url(../assets/images/shape-7.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: bottom right, top right, top right;
+    background-color: transparent;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.116); /* Add shadow to divs */
+    border: 1px solid #0e11361f;
+}
+.ecgImageContainer img {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.116); /* Add shadow to divs */
+    border: 1px solid #ca0b0b07;
+}
+.arrowDiv {
+    animation: moveUpDown 1s ease-in-out infinite alternate; /* Infinite up and down animation */
+}
+.arrowDiv img {
+    border: none;
+    box-shadow: none;
+    padding: 30px 0;
+}
+.ecgImage {
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow around image */
 }
 
 .fullWidthContainer form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .fullWidthContainer label {
-    font-weight: bold;
+    font-weight: 600;
     color: #555;
+    margin-bottom: 5px;
+    display: block;
 }
 
 .fullWidthContainer input[type='file'],
-.fullWidthContainer input[type='number'],
+.fullWidthContainer input[type='date'],
 .fullWidthContainer select {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     border: 1px solid #ddd;
-    background-color: #fff;
+    background-color: #fafafa;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-size: 1em;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.fullWidthContainer input[type='date'] {
+    padding: 9px;
+}
+.fullWidthContainer input[type='file']:hover,
+.fullWidthContainer input[type='date']:hover,
+.fullWidthContainer select:hover {
+    border-color: #0e1136;
+    box-shadow: 0 0 5px rgba(0, 112, 243, 0.2);
+}
+
+.fullWidthContainer input[type='file']:focus,
+.fullWidthContainer input[type='date']:focus,
+.fullWidthContainer select:focus {
+    outline: none;
+    border-color: #0e1136;
+    box-shadow: 0 0 5px rgba(0, 112, 243, 0.3);
 }
 
 .fullWidthContainer button {
-    padding: 10px 15px;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+    margin-top: 10px;
+    width: 100%;
 }
 
-.fullWidthContainer button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.loading {
-    text-align: center;
-    color: #0070f3;
-    font-weight: bold;
-}
-
-.resultContainer {
-    background-color: #e9f5ff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.resultContainer h3 {
-    margin: 10px 0;
-    color: #333;
-}
-
-.resultContainer ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    color: #555;
-}
-.parentEcgImageContainer {
+.ageGender {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-.ecgImageContainer {
-    width: 60%;
-    background-color: rgb(4, 0, 255);
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 20px;
 }
 
-.ecgImage {
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.ageGender p {
+    width: 50%;
+}
+
+/* Alternative method for up and down animation */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0); /* Original position */
+    }
+    100% {
+        transform: translateY(-20px); /* Move up */
+    }
 }
