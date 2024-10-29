@@ -8,9 +8,8 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('upload/', predict_ecg, name='upload'),
-    path('', TemplateView.as_view(template_name='home.html'),
-         name='home'),  # Home page route
 
 ]
 
