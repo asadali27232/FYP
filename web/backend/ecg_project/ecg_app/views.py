@@ -13,13 +13,6 @@ from .utils.ptbxl_dataset_preprocessor import PTBXLDatasetPreprocesser
 from .utils.ECGClassifier import ECGClassifier
 from django.http import JsonResponse
 
-def uploadpage(request):
-    return render(request, 'upload.html')
-
-
-def upload_view(request):
-    if request.method == 'GET':
-        return render(request, 'upload.html')
 
 def handle_uploaded_file(hea_file, dat_file):
     # Save the uploaded files to the media directory
