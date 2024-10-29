@@ -17,11 +17,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',  # Ensure CORS headers are added
-    'ecg_app',  # Include your custom app here
+    'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
-    'authapp',  # Your authentication app
+    'ecg_app',  # Include your custom app here
 ]
 
 DATABASES = {
@@ -33,6 +32,12 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
 }
 
 MIDDLEWARE = [
