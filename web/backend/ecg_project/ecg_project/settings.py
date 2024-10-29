@@ -19,7 +19,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',  # Ensure CORS headers are added
     'ecg_app',  # Include your custom app here
+    'auth_app',  # Include the auth app here
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
 MIDDLEWARE = [
     # CORS Middleware should be at the top
@@ -60,11 +67,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecg_project.wsgi.application'
 
-# Database configuration
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',  # or '127.0.0.1'
+        'PORT': '5432',       # Default PostgreSQL port
     }
 }
 
@@ -97,3 +107,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'auth_app.CustomUser'  # Set the custom user model
