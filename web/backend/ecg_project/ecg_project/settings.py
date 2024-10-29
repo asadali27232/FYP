@@ -19,7 +19,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',  # Ensure CORS headers are added
     'ecg_app',  # Include your custom app here
+    'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
+    'authapp',  # Your authentication app
 ]
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 MIDDLEWARE = [
     # CORS Middleware should be at the top
