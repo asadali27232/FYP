@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
 from .serializers import UserSerializer
+from .models import CustomUser
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 
 class SignUpView(APIView):
@@ -24,3 +27,15 @@ class LoginView(APIView):
             token = AccessToken.for_user(user)
             return Response({'access': str(token)}, status=status.HTTP_200_OK)
         return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+class UserListView(generics.ListAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
+
+
+class ProtectedView(APIView):
+    permission_classes = [IsAuthenticated]  # Only allow authenticated users
+
+    def get(self, request):
+        return Response({'message': 'You are having a valid token'}, status=status.HTTP_200_OK)

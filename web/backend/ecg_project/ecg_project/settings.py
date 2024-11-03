@@ -70,7 +70,7 @@ WSGI_APPLICATION = 'ecg_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test',
+        'NAME': 'cardiographpro',
         'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',  # or '127.0.0.1'

@@ -1,3 +1,6 @@
-from django.contrib import admin
+# auth_app/admin.py
 
-# Register your models here.
+from django.contrib import admin
+from .models import CustomUser  # or User if you're using the default model
+
+admin.site.register(CustomUser)  # Register your custom user model
