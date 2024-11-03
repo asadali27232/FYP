@@ -7,8 +7,14 @@ import { useRouter } from 'next/navigation'; // Use Next.js router for navigatio
 
 export default function Signup() {
     const [username, setUsername] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [gender, setGender] = useState(''); // State for gender
+    const [dob, setDob] = useState(''); // State for date of birth
+    const [contactNumber, setContactNumber] = useState(''); // State for contact number
+    const [userType, setUserType] = useState('patient'); // State for user type (default to patient)
     const [errorMessage, setErrorMessage] = useState(''); // State to hold error messages
     const router = useRouter(); // Use Next.js router
 
@@ -22,8 +28,14 @@ export default function Signup() {
                 'http://127.0.0.1:8000/auth/signup/',
                 {
                     username,
+                    first_name: firstName, // Updated to match backend field names
+                    last_name: lastName,
                     email,
                     password,
+                    gender,
+                    dob,
+                    contact_number: contactNumber, // Updated to match backend field names
+                    user_type: userType, // Use 'doctor' for a doctor user
                 }
             );
 
@@ -48,7 +60,7 @@ export default function Signup() {
                     <h2 className={styles.title}>Sign Up</h2>
                     {errorMessage && (
                         <p className={styles.error}>{errorMessage}</p>
-                    )}{' '}
+                    )}
                     {/* Display error message */}
                     <div className={styles.inputGroup}>
                         <label htmlFor="username">Username</label>
@@ -57,6 +69,26 @@ export default function Signup() {
                             id="username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="firstName">First Name</label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="lastName">Last Name</label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                             required
                         />
                     </div>
@@ -79,6 +111,50 @@ export default function Signup() {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="gender">Gender</label>
+                        <select
+                            id="gender"
+                            value={gender}
+                            onChange={(e) => setGender(e.target.value)}
+                            required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="dob">Date of Birth</label>
+                        <input
+                            type="date"
+                            id="dob"
+                            value={dob}
+                            onChange={(e) => setDob(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="contactNumber">Contact Number</label>
+                        <input
+                            type="text"
+                            id="contactNumber"
+                            value={contactNumber}
+                            onChange={(e) => setContactNumber(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="userType">User Type</label>
+                        <select
+                            id="userType"
+                            value={userType}
+                            onChange={(e) => setUserType(e.target.value)}
+                            required>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                        </select>
                     </div>
                     <button type="submit" className={styles.button}>
                         Sign Up

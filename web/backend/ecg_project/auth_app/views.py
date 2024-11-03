@@ -41,8 +41,19 @@ class ProtectedView(APIView):
         return Response({'message': 'You are having a valid token'}, status=status.HTTP_200_OK)
 
 # Return the user's information
+
+
 class UserInfoView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
         return Response({'user': UserSerializer(request.user).data}, status=status.HTTP_200_OK)
+
+
+class DoctorListView(generics.ListAPIView):
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]  # Requires authentication to access
+
+    def get_queryset(self):
+        # Filter users where user_type is "doctor"
+        return CustomUser.objects.filter(user_type='doctor')
