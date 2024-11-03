@@ -1,16 +1,34 @@
-'use client'; // This marks the component as a Client Component
-import styles from './profile.module.css';
+'use client';
+import { useAuth } from '../context/AuthContext';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-import Banner from '../../components/Banner';
+const Profile = () => {
+    const { user, loading } = useAuth();
+    const router = useRouter();
 
-export default function Login() {
+    useEffect(() => {
+        if (!loading && !user) {
+            window.location.href = '/login';
+        }
+    }, [user, loading, router]);
+
+    if (loading) return <p>Loading...</p>;
+
     return (
-        <main>
-            <Banner heading="Profile" breadcrumb="Profile" />
-            <section className={styles.profile}>
-                <h2>Profile</h2>
-                <p>Profile page content</p>
-            </section>
-        </main>
+        <div>
+            <h1>User Profile</h1>
+            {user ? (
+                <div>
+                    <h2>Welcome, {user.username}</h2>
+                    <p>Email: {user.email}</p>
+                    {/* Display other user information as needed */}
+                </div>
+            ) : (
+                <p>You need to log in to see this page.</p>
+            )}
+        </div>
     );
-}
+};
+
+export default Profile;

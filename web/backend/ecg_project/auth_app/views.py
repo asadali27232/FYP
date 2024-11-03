@@ -39,3 +39,10 @@ class ProtectedView(APIView):
 
     def get(self, request):
         return Response({'message': 'You are having a valid token'}, status=status.HTTP_200_OK)
+
+# Return the user's information
+class UserInfoView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({'user': UserSerializer(request.user).data}, status=status.HTTP_200_OK)

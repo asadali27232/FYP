@@ -3,10 +3,12 @@ import styles from './login.module.css';
 import { useState } from 'react';
 import axios from 'axios'; // Make sure to import axios
 import Banner from '../../components/Banner';
+import { useRouter } from 'next/navigation'; // Import the useRouter hook
 
 export default function Login() {
     const [email, setEmail] = useState('asadali@gmail.com');
     const [password, setPassword] = useState('asadali');
+    const router = useRouter(); // Use Next.js router for navigation
 
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent the default form submission behavior
@@ -24,7 +26,10 @@ export default function Login() {
 
             const { access } = response.data; // Extract access token
 
-            // Step 2: Test the token
+            // Step 2: Store the access token in local storage
+            localStorage.setItem('token', access);
+
+            // Step 3: Test the token
             const tokenTestResponse = await axios.get(
                 'http://127.0.0.1:8000/auth/tokentest/',
                 {
@@ -40,7 +45,7 @@ export default function Login() {
                 'You are having a valid token'
             ) {
                 alert('You are logged in');
-                window.location.href = '/profile'; // Navigate to profile page
+                window.location.href = '/profile'; // Navigate to profile page using Next.js router
             }
         } catch (error) {
             alert(

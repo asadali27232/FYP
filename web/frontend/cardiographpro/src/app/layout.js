@@ -1,8 +1,8 @@
-// src/app/layout.js
 import './globals.css'; // Import global styles
 import Header from '../components/Header'; // Import the Header component
 import Footer from '../components/Footer'; // Import the Footer component
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { AuthProvider } from './context/AuthContext';
 
 export const metadata = {
     title: 'Cardiograph Pro',
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body>
                 <Header /> {/* Include the Header component */}
-                <main>{children}</main>
+                <AuthProvider>{children}</AuthProvider>
                 <Footer /> {/* Include the Footer component */}
             </body>
         </html>
