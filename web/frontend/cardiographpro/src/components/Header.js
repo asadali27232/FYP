@@ -84,8 +84,8 @@ const Header = () => {
                         {/* Remove duplicates for clarity */}
                     </ul>
                 </nav>
-                <Button onClick={() => alert('Button clicked!')}>
-                    Book Appointment
+                <Button onClick={() => (window.location.href = '/login')}>
+                    Login
                 </Button>
             </div>
         </header>

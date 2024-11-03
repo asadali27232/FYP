@@ -4,8 +4,8 @@ import Banner from '../../components/Banner'; // Import the Banner component
 
 export default function ChatbotPage() {
     return (
-        <section>
+        <main>
             <Banner heading="Medical Chatbot" breadcrumb="chatbot" />
-        </section>
+        </main>
     );
 }
