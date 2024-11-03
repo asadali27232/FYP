@@ -54,3 +54,24 @@
 .userInfoTable td:last-child {
     color: #333;
 }
+
+.profilePicContainer {
+    position: relative;
+    text-align: center;
+}
+
+.fileInput {
+    margin-top: 10px;
+    display: block;
+}
+
+.uploading {
+    color: blue;
+    font-weight: bold;
+}
+
+.uploadMessage {
+    margin-top: 10px;
+    color: green; /* or red for errors */
+    font-weight: bold;
+}

@@ -1,7 +1,7 @@
 # auth_app/urls.py
 
 from django.urls import path
-from .views import SignUpView, LoginView, UserListView, ProtectedView, UserInfoView, DoctorListView
+from .views import SignUpView, LoginView, UserListView, ProtectedView, UserInfoView, DoctorListView, UploadProfilePictureView, UserProfilePictureView
 
 
 urlpatterns = [
@@ -11,5 +11,8 @@ urlpatterns = [
     path('tokentest/', ProtectedView.as_view(), name='protected'),
     path('user/', UserInfoView.as_view(), name='user'),
     path('doctors/', DoctorListView.as_view(), name='doctor-list'),
-
+    path('uploadprofilepicture/', UploadProfilePictureView.as_view(),
+         name='upload_profile_picture'),
+    path('getprofilepicture/', UserProfilePictureView.as_view(),
+         name='get_profile_picture'),
 ]
