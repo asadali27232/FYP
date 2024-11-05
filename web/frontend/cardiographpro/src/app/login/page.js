@@ -4,6 +4,7 @@ import { useState } from 'react';
 import axios from 'axios'; // Import axios for HTTP requests
 import Banner from '../../components/Banner';
 import { useRouter } from 'next/navigation'; // Import useRouter for navigation
+import Image from 'next/image'; // Import Next.js Image component
 
 export default function Login() {
     const [email, setEmail] = useState('asadali@gmail.com');
@@ -61,7 +62,13 @@ export default function Login() {
             <div className={styles.container}>
                 <div className={styles.leftSection}>
                     <div className={styles.logo}>
-                        <img src="/images/logo.png" alt="Logo" />
+                        {/* Using Next.js Image component */}
+                        <Image
+                            src="/assets/images/logo.png"
+                            alt="Logo"
+                            width={150}
+                            height={150}
+                        />
                         <span className={styles.cardiograph}>
                             Cardiograph<span className={styles.pro}>pro</span>
                         </span>
@@ -72,13 +79,14 @@ export default function Login() {
                             <span style={{ color: '#6EAB36' }}>Healthy</span>{' '}
                             Future
                         </p>
-                        <img
-                            src="/images/doctor.png"
+                        {/* Using Next.js Image component for the doctor image */}
+                        <Image
+                            src="/assets/doctor.png"
                             alt="Doctor"
+                            width={400}
+                            height={400}
                             className={styles.doctorImg}
                             style={{
-                                width: '400px',
-                                height: 'auto',
                                 display: 'block',
                                 marginTop: '10px',
                                 marginLeft: '70px',
