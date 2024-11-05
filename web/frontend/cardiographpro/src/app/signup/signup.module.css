@@ -18,7 +18,7 @@
 }
 
 .rightSection {
-    background-color: #007E85;
+    background-color: #0b0e41;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -87,28 +87,30 @@
 .loginBtn {
     width: 50%;
     background-color: white;
-    color: #007E85;
+    color: #0e1136;
     padding: 5px;
     border: 1px solid #007E85;
     border-radius: 30px;
     margin-top: 20px;
     font-weight: bolder;
     cursor: pointer;
+    margin-right: 100px;
 }
 .signupbtn {
-    width: 50%;
+    width: 38%;
     background-color: white;
-    color: #007E85;
+    color: #0e1136;
     padding: 5px;
-    border: 1px solid #007E85; 
-    border-radius: 25px; /* This makes the button round */
+    border: 1px solid #0e1136; 
+    border-radius: 80px; /* This makes the button round */
     display: block;      /* Ensure the button behaves as a block element */
     margin: 0 auto;     /* Center the button */
-    cursor: pointer;     /* Change cursor to pointer on hover */
+    cursor: pointer;
+    font-weight: bolder;     /* Change cursor to pointer on hover */
 }
 
 .signupbtn:hover {
-    background-color: #007E85; /* Optional: Change background color on hover */
+    background-color: #464fce; /* Optional: Change background color on hover */
     color: white;               /* Optional: Change text color on hover */
 }
 

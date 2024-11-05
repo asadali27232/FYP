@@ -62,9 +62,9 @@ export default function Signup() {
                         </span>
                         <p className={styles.careLine}>
                             Providing Quality <span>Heart care</span> for a{' '}
-                            <span style={{ color: '#6EAB36' }}>Brighter</span>{' '}
+                            <span style={{ color: '#0e1136' }}>Brighter</span>{' '}
                             and <br />
-                            <span style={{ color: '#6EAB36' }}>Healthy</span>{' '}
+                            <span style={{ color: '#009688' }}>Healthy</span>{' '}
                             Future
                         </p>
                         <img
