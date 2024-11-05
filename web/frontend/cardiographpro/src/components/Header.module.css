@@ -1,0 +1,110 @@
+.header {
+    background-color: #0e1136; /* Dark background color */
+    padding: 0; /* Remove padding for full-width effect */
+}
+
+.topHeader {
+    background-color: #0e1136; /* Dark background color */
+    color: white; /* Text color */
+    padding: 18px 120px; /* Inner padding for top header */
+    display: flex;
+    justify-content: space-between; /* Space between tagline and social links */
+    align-items: center;
+    width: 100%; /* Full width */
+}
+
+.contactInfo {
+    display: flex; /* Flex for horizontal layout */
+    align-items: center; /* Align items vertically */
+    gap: 2rem; /* Space between elements */
+}
+
+.socialLinks a {
+    margin-left: 1.5rem; /* Increased spacing between social links */
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* White color for social links */
+    font-size: 0.9rem; /* Font size for social links */
+    transition: color 0.5s ease; /* Smooth transition for color change */
+}
+
+/* Change color of the icons on hover */
+.socialLinks a:hover {
+    color: #dc143c; /* Change icon color to Crimson on hover */
+}
+
+.bottomHeader {
+    display: flex;
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Align items vertically */
+    height: 100px; /* Set height */
+    border-radius: 100px 0px 0px 100px; /* Round corners on the left side */
+    padding: 0 80px; /* Horizontal padding */
+    background-color: #ffffff; /* Set a background color (optional) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for depth */
+    margin-left: 40px;
+}
+
+.bottomHeader h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.8rem; /* Set a responsive font size for the logo */
+    font-weight: 600; /* Set font weight */
+}
+.logo {
+    display: flex; /* Flex for horizontal layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 200px; /* Set width */
+}
+/* Assuming you have this in Header.module.css */
+.nav {
+    display: flex; /* Use flexbox for the nav */
+    justify-content: space-around; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Full width for better alignment */
+}
+
+.navItem {
+    position: relative; /* Set position to relative for the circle effect */
+}
+
+.navItem a {
+    text-decoration: none; /* Remove underline from links */
+    color: #000000; /* Link color */
+    font-size: 1.3rem; /* Set font size for nav links */
+    position: relative; /* Set position to relative for absolute positioning of the circle */
+    z-index: 1; /* Ensure text is above the circle */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transitions for color and font size */
+}
+
+/* Add this if you want to control the space between nav items */
+.navItem + .navItem {
+    margin-left: 30px; /* Adjust margin as needed */
+}
+
+.navItem a:hover {
+    color: #dc143c; /* Change color on hover */
+    font-size: 1.3rem; /* Increase font size on hover */
+}
+
+/* Circle effect */
+.navItem a::before {
+    content: ''; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center it vertically */
+    left: 10%; /* Center it horizontally */
+    width: 40px; /* Size for the expanding effect */
+    height: 40px; /* Size for the expanding effect */
+    background-color: rgba(220, 20, 60, 0.205); /* Semi-transparent red */
+    border-radius: 50%; /* Make it circular */
+    transform: translate(-50%, -50%) scale(0); /* Start hidden */
+    transition: transform 0.5s ease; /* Smooth transition for the scale */
+    z-index: 0; /* Position below the text */
+}
+
+/* Show the circle effect on hover */
+.navItem a:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Expand to full size */
+}

@@ -1,0 +1,117 @@
+/* Services Section */
+.services {
+    padding: 130px 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative; /* Position relative for absolute children */
+}
+
+.backgroundImage {
+    position: absolute; /* Position the image absolutely */
+    top: 20px; /* Align it to the top of the section */
+    left: 80px; /* Align it to the left of the section */
+    width: 200px; /* Set the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 0; /* Ensure it stays behind the content */
+    opacity: 1; /* Optional: make it slightly transparent */
+}
+
+.serviceCards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    position: relative; /* Ensure cards stay above the background */
+    z-index: 1; /* Ensure cards are above the image */
+}
+
+.serviceCard {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    flex: 1 1 300px;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 2; /* Ensure the card is above the image */
+}
+
+/* Create the red overlay effect */
+.serviceCard::before {
+    content: '';
+    position: absolute;
+    top: -100%; /* Initially positioned above the card */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dc143c; /* Red color */
+    z-index: -1; /* Ensure it stays behind the content */
+    transition: top 0.5s ease; /* Smooth top-down movement */
+}
+
+/* Hover state to move the red overlay down */
+.serviceCard:hover::before {
+    top: 0; /* Move red overlay into view */
+}
+
+/* When the cursor leaves, move the overlay down */
+.serviceCard::after {
+    content: '';
+    position: absolute;
+    bottom: -100%; /* Initially positioned below the card */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dc143c; /* Red color */
+    z-index: -1; /* Keep behind the content */
+    transition: bottom 0.5s ease; /* Smooth transition for moving down */
+}
+
+.serviceCard:hover::after {
+    bottom: 0; /* When hovered, overlay moves down */
+}
+
+.serviceCard:hover h3,
+.serviceCard:hover p,
+.serviceCard:hover .icon {
+    color: #ffffff; /* Change text color to white */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Styles for the heading */
+.serviceCard h3 {
+    font-size: 26px; /* Larger font size for headings */
+    margin: 10px 0; /* Margin around the heading */
+    color: #000000; /* Heading color */
+    display: flex; /* Flex display to align icon */
+    align-items: start; /* Align items at the start */
+    font-weight: 600; /* Bold font weight */
+    text-align: start;
+    z-index: 2; /* Ensures text stays above the red overlay */
+    transition: color 0.5s ease; /* Smooth text color transition */
+}
+
+/* Styles for the paragraph */
+.serviceCard p {
+    font-size: 16px; /* Font size for paragraph */
+    color: #676767; /* Text color for the paragraph */
+    line-height: 1.5; /* Improve readability with line height */
+    font-weight: 400;
+    text-align: start;
+    z-index: 2; /* Ensures text stays above the red overlay */
+    transition: color 0.5s ease; /* Smooth text color transition */
+}
+
+/* Icon styling */
+.icon {
+    font-size: 2.5rem; /* Increased size of the icon */
+    margin-right: 10px; /* Space between icon and heading */
+    color: #dc143c; /* Color for the favorite icon */
+    z-index: 2; /* Ensures icon stays above the red overlay */
+    transition: color 0.5s ease; /* Smooth color transition */
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to ECG App</title>
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF00; /* Bright green text for hacker aesthetic */
+            font-family: 'Courier New', Courier, monospace;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            display: flex; /* Enable Flexbox */
+            flex-direction: column; /* Vertical alignment */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text alignment */
+        }
+        .background-left, .background-right {
+            position: absolute;
+            top: 0;
+            width: 25%; /* Set width for side divs */
+            height: 100%;
+            overflow: hidden; /* Prevent overflow */
+            z-index: 0;
+        }
+        .background-left {
+            left: 0; /* Position to the left */
+        }
+        .background-right {
+            right: 0; /* Position to the right */
+        }
+        .bg-left-1, .bg-left-2, .bg-right-1, .bg-right-2 {
+            position: absolute;
+            width: 100%;
+            height: 50%; /* Each background div takes half the height */
+            overflow: hidden; /* Prevent overflow */
+            white-space: nowrap;
+            color: rgba(0, 255, 0, 0.205); /* Faint green text */
+        }
+        .bg-left-1 {
+            top: 0;
+            animation: scroll-up 15s linear infinite; /* First div scrolls up */
+        }
+        .bg-left-2 {
+            top: 50%; /* Start from the bottom */
+            animation: scroll-up-in 15s linear infinite; /* Second div enters */
+        }
+        .bg-right-1 {
+            top: 0;
+            animation: scroll-up 15s linear infinite; /* First div scrolls up */
+        }
+        .bg-right-2 {
+            top: 50%; /* Start from the bottom */
+            animation: scroll-up-in 15s linear infinite; /* Second div enters */
+        }
+        /* Keyframes for scrolling */
+        @keyframes scroll-up {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+        @keyframes scroll-up-in {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
+        }
+        h1 {
+            font-size: 3rem; /* Larger font for the main heading */
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00FF00; /* Glowing text effect */
+            position: relative;
+            z-index: 1; /* Bring heading above background */
+        }
+        p {
+            font-size: 1.5rem; /* Larger font for details */
+            margin-bottom: 10px;
+        }
+        .status {
+            font-size: 2rem; /* Prominent server status */
+            font-weight: bold;
+            color: #FF0000; /* Red for emphasis */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px #FF0000; /* Glowing effect for status */
+        }
+        .terminal {
+            border: 1px solid #00FF00; /* Green border */
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Glowing box shadow */
+            background-color: rgba(28, 28, 28, 0.9); /* Slightly transparent dark gray */
+            width: 80%;
+            max-width: 800px;
+            position: relative;
+            z-index: 1; /* Bring terminal above background */
+            margin: auto; /* Center the terminal box */
+        }
+        footer {
+            margin-top: auto;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #00FF00; /* Green footer */
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Bring footer above background */
+        }
+                .admin-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #00FF00; /* Green background */
+            color: black; /* Black text */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 1.2rem; /* Font size */
+            text-shadow: 0 0 5px #00FF00; /* Glowing text effect */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+        .admin-button:hover {
+            background-color: #009900; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-left">
+    <div class="bg-left-1">
+        <p>Complex DSA in x86 Assembly...</p>
+        <p>section .data</p>
+        <p>    arr db 5, 3, 8, 6, 2, 7, 4</p>
+        <p>    len db 7</p>
+        <p>section .text</p>
+        <p>global _start</p>
+        <p>_start:</p>
+        <p>    ; Merge sort implementation</p>
+        <p>    ; Call merge_sort with the array</p>
+        <p>    mov rdi, arr</p>
+        <p>    call merge_sort</p>
+        <p></p>
+        <p>merge_sort:</p>
+        <p>    ; Check if the array length is > 1</p>
+        <p>    ; Code for splitting and merging...</p>
+        <p>    ret</p>
+    </div>
+    <div class="bg-left-2">
+        <p>Binary Tree Traversal in x86 Assembly...</p>
+        <p>section .data</p>
+        <p>    root dq 0</p>
+        <p>section .text</p>
+        <p>global _start</p>
+        <p>_start:</p>
+        <p>    ; Create and traverse binary tree</p>
+        <p>    call print_post_order</p>
+        <p></p>
+        <p>print_post_order:</p>
+        <p>    ; Post-order traversal logic</p>
+        <p>    ret</p>
+    </div>
+</div>
+
+
+    <div class="background-right">
+        <div class="bg-right-1">
+            <p>class Graph {</p>
+            <p>    int V; // Number of vertices</p>
+            <p>    list<int> *adj;</p>
+            <p>public:</p>
+            <p>    Graph(int V) {</p>
+            <p>        this->V = V;</p>
+            <p>        adj = new list<int>[V];</p>
+            <p>    }</p>
+            <p>    void addEdge(int v, int w) {</p>
+            <p>        adj[v].push_back(w);</p>
+            <p>    }</p>
+            <p>};</p>
+        </div>
+        <div class="bg-right-2">
+            <p>function fib(n) {</p>
+            <p>    if (n <= 1) return n;</p>
+            <p>    return fib(n - 1) + fib(n - 2);</p>
+            <p>}</p>
+            <p>let memo = {};</p>
+            <p>function fibMemo(n) {</p>
+            <p>    if (n in memo) return memo[n];</p>
+            <p>    memo[n] = fib(n);</p>
+            <p>    return memo[n];</p>
+            <p>}</p>
+        </div>
+    </div>
+
+    <div class="terminal">
+        <h1>Welcome to the CardioGraphPro</h1>
+        <p>System Status:</p>
+        <div class="status">SERVER RUNNING</div>
+        <p><strong>ECG App Version:</strong> 1.0.0</p>
+        <p><strong>Environment:</strong> Development</p>
+        <button class="admin-button" onclick="window.location.href='/admin'">Admin Login</button>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CardioGraphPro. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

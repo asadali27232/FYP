@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   Weather forecast - OpenWeatherMap
+  </title>
+  <meta content="app-id=1535923697" name="apple-itunes-app"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-31TSX35RJT">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-31TSX35RJT');
+  </script>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="weather, world, Openstreetmap, forecast, Openweather, current" name="keywords"/>
+  <meta content="Discover detailed, real-time weather updates and forecasts for your city or town with OpenWeather's
+comprehensive weather service." name="description"/>
+  <meta content="OpenWeatherMap.org" name="author"/>
+  <meta content="OpenWeatherMap.org" name="domain"/>
+  <meta content="34fe229eab8562dca90f4a5962ff80a9" name="p:domain_verify"/>
+  <meta content="Weather forecast" property="title"/>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" rel="stylesheet"/>
+  <link href="/themes/openweathermap/assets/vendor/owm/img/icons/favicon.ico" rel="shortcut icon"/>
+  <link href="/themes/openweathermap/assets/vendor/owm/img/icons/logo_16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/themes/openweathermap/assets/vendor/owm/img/icons/logo_32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/themes/openweathermap/assets/vendor/owm/img/icons/logo_60x60.png" rel="icon" sizes="60x60" type="image/png"/>
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500,400italic,500italic" rel="stylesheet"/>
+  <link href="https://openweathermap.org/plugins/offline/gdpr/assets/cookieBanner/banner.css" rel="stylesheet"/>
+  <link href="https://openweathermap.org/combine/b71ac43f6ac12c7a2077a071baf190ae-1720001175" rel="stylesheet"/>
+  <script src="https://openweathermap.org/combine/d8fb6d080cb70d894318fcae14526239-1720001175">
+  </script>
+ </head>
+ <body class="body-orange" onclick="closePopUps()">
+  <link href="/themes/openweathermap/assets/css/smart_banner_android.css" rel="stylesheet"/>
+  <div class="banner_stripe" id="banner_android">
+   <div class="banner_container">
+    <a class="smartbanner__exit" onclick="bannerClose()">
+    </a>
+    <img alt="banner android" class="banner_icon" src="/themes/openweathermap/assets/img/mobile_app/android-app-top-banner.png"/>
+    <div>
+     <p class="smartbanner-text">
+      OpenWeather
+     </p>
+     <p class="smartbanner-text">
+      OpenWeather Ltd.
+     </p>
+     <p class="smartbanner-text">
+      GET - on Google Play
+     </p>
+    </div>
+   </div>
+   <a class="google_button" href="https://play.google.com/store/apps/details?id=uk.co.openweather">
+    VIEW
+   </a>
+  </div>
+  <script src="/themes/openweathermap/assets/js/smart_banner_android.js">
+  </script>
+  <nav id="nav-website" onclick="toggleMenu(event)">
+   <ul id="first-level-nav">
+    <li class="logo">
+     <a href="/">
+      <img alt="logo" src="/themes/openweathermap/assets/img/logo_white_cropped.png"/>
+     </a>
+    </li>
+    <li id="hamburger">
+     <img alt="icon hamburger" src="/themes/openweathermap/assets/img/owm_icons/icon_hamburger.svg"/>
+    </li>
+    <li id="desktop-menu">
+     <form action="/find" method="get" role="search">
+      <input name="q" placeholder="Weather in your city" type="text"/>
+      <input class="submit" type="submit"/>
+     </form>
+     <ul>
+      <li>
+       <a href="/guide">
+        Guide
+       </a>
+      </li>
+      <li>
+       <a href="/api">
+        API
+       </a>
+      </li>
+      <li>
+       <a href="/weather-dashboard">
+        Dashboard
+       </a>
+      </li>
+      <li>
+       <a href="https://home.openweathermap.org/marketplace" target="_blank">
+        Marketplace
+       </a>
+      </li>
+      <li>
+       <a href="/price">
+        Pricing
+       </a>
+      </li>
+      <li>
+       <a href="/weathermap">
+        Maps
+       </a>
+      </li>
+      <li>
+       <a href="/our-initiatives">
+        Our Initiatives
+       </a>
+      </li>
+      <li>
+       <a href="/examples">
+        Partners
+       </a>
+      </li>
+      <li>
+       <a href="https://openweather.co.uk/blog/category/weather" target="_blank">
+        Blog
+       </a>
+      </li>
+      <li>
+       <a class="marketplace" href="https://openweather.co.uk" target="_blank">
+        For Business
+       </a>
+      </li>
+      <li class="user-li">
+       <a href="https://openweathermap.org/home/sign_in">
+        Sign in
+       </a>
+      </li>
+      <li class="with-dropdown">
+       <div id="support-dropdown">
+        Support
+       </div>
+       <ul class="dropdown-menu" id="support-dropdown-menu">
+        <li>
+         <a href="/faq">
+          FAQ
+         </a>
+        </li>
+        <li>
+         <a href="/appid">
+          How to start
+         </a>
+        </li>
+        <li>
+         <a href="/chat">
+          ChatBot assistant
+         </a>
+        </li>
+        <li>
+         <a href="https://home.openweathermap.org/questions" target="_blank">
+          Ask a question
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+   <ul id="mobile-menu">
+    <li>
+     <form action="/find" method="get" role="search">
+      <input name="q" placeholder="Weather in your city" type="text"/>
+      <input class="submit" type="submit"/>
+     </form>
+    </li>
+    <li>
+     <a href="/guide">
+      Guide
+     </a>
+    </li>
+    <li>
+     <a href="/api">
+      API
+     </a>
+    </li>
+    <li>
+     <a href="/weather-dashboard">
+      Dashboard
+     </a>
+    </li>
+    <li>
+     <a href="https://home.openweathermap.org/marketplace" target="_blank">
+      Marketplace
+     </a>
+    </li>
+    <li>
+     <a href="/price">
+      Pricing
+     </a>
+    </li>
+    <li>
+     <a href="/weathermap">
+      Maps
+     </a>
+    </li>
+    <li>
+     <a href="/our-initiatives">
+      Our Initiatives
+     </a>
+    </li>
+    <li>
+     <a href="/examples">
+      Partners
+     </a>
+    </li>
+    <li>
+     <a href="https://openweather.co.uk/blog/category/weather" target="_blank">
+      Blog
+     </a>
+    </li>
+    <li>
+     <a class="marketplace" href="https://openweather.co.uk" target="_blank">
+      For Business
+     </a>
+    </li>
+    <li>
+     <a href="https://home.openweathermap.org/questions">
+      Ask a question
+     </a>
+    </li>
+    <li>
+     <a href="https://openweathermap.org/home/sign_in">
+      Sign in
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <div class="nav-styles">
+  </div>
+  <main class="wrapper">
+   <link href="/themes/openweathermap/assets/css/meteo-banner.css" rel="stylesheet"/>
+   <div class="pop-up" id="meteo-banner">
+    <div class="pop-up-content">
+     <span class="close-btn">
+      ×
+     </span>
+     <h2 class="text-center">
+      OpenWeather
+      <br/>
+      Meteorological Service
+     </h2>
+     <img alt="Dan Hart" height="96" src="/themes/openweathermap/assets/img/Dan_Hart.jpeg" width="96"/>
+     <a class="ow-btn round btn-orange text-center" href="https://openweather.co.uk/meteorology" id="meteo-banner-button" target="_blank">
+      Speak to the Chief
+      <br/>
+      Meteorologist Dan Hart and
+      <br/>
+      his team!
+     </a>
+    </div>
+   </div>
+   <script src="/themes/openweathermap/assets/js/meteo-banner.js">
+   </script>
+   <div id="weather-widget">
+   </div>
+   <script src="/themes/openweathermap/assets/vendor/owm/js/weather-app.cb2cf0fb.js">
+   </script>
+  </main>
+  <div id="footer-website" onclick="toggleFooterSection(event)">
+   <div class="inner-footer-container">
+    <div class="horizontal-section">
+     <div class="footer-section">
+      <p class="section-heading">
+       Product Collections
+      </p>
+      <div class="section-content">
+       <ul>
+        <li>
+         <a href="/api#current">
+          Current and Forecast APIs
+         </a>
+        </li>
+        <li>
+         <a href="/api#history">
+          Historical Weather Data
+         </a>
+        </li>
+        <li>
+         <a href="/api#maps">
+          Weather Maps
+         </a>
+        </li>
+        <li>
+         <a href="/weather-dashboard">
+          Weather Dashboard
+         </a>
+        </li>
+        <li>
+         <a href="/widgets-constructor">
+          Widgets
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="footer-section">
+      <p class="section-heading">
+       Subscription
+      </p>
+      <div class="section-content">
+       <ul>
+        <li>
+         <a href="/appid">
+          How to start
+         </a>
+        </li>
+        <li>
+         <a href="/price">
+          Pricing
+         </a>
+        </li>
+        <li>
+         <a href="https://home.openweathermap.org/users/sign_up">
+          Subscribe for free
+         </a>
+        </li>
+        <li>
+         <a href="/faq">
+          FAQ
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="footer-section">
+      <p class="section-heading">
+       Company
+      </p>
+      <div class="section-content">
+       <p>
+        OpenWeather is a team of IT experts and data scientists that has been practising deep weather data
+                  science. For each point on the globe, OpenWeather provides historical, current and forecasted weather
+                  data via light-speed APIs. Headquarters in London, UK.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="horizontal-section">
+     <div class="footer-section">
+      <p class="section-heading">
+       Technologies
+      </p>
+      <div class="section-content">
+       <ul>
+        <li>
+         <a href="/technology">
+          Our technology
+         </a>
+        </li>
+        <li>
+         <a href="/accuracy-and-quality">
+          Accuracy and quality of weather data
+         </a>
+        </li>
+        <li>
+         <a href="/stations">
+          Connect your weather station
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="footer-section">
+      <p class="section-heading">
+       Terms &amp; Conditions
+      </p>
+      <div class="section-content">
+       <ul>
+        <li>
+         <a href="https://openweather.co.uk/storage/app/media/Terms/Openweather_terms_and_conditions_of_sale.pdf" target="_blank">
+          Terms and conditions of sale
+         </a>
+        </li>
+        <li>
+         <a href="https://openweather.co.uk/privacy-policy" target="_blank">
+          Privacy Policy
+         </a>
+        </li>
+        <li>
+         <a href="https://openweather.co.uk/storage/app/media/Terms/Openweather_website_terms_and_conditions_of_use.pdf" target="_blank">
+          Website terms and conditions
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="footer-section not-foldable">
+      <!-- <p class="section-heading">Contact us</p> -->
+      <div class="section-content">
+       <ul>
+        <li>
+         <a href="/about-us">
+          About us
+         </a>
+        </li>
+        <li>
+         <a href="https://openweather.co.uk/blog/category/weather" target="_blank">
+          Blog
+         </a>
+        </li>
+        <li>
+         <a href="https://openweather.co.uk/" target="_blank">
+          OpenWeather for Business
+         </a>
+        </li>
+        <li>
+         <a href="/chat">
+          ChatBot assistant
+         </a>
+        </li>
+        <li>
+         <a href="https://home.openweathermap.org/questions" target="_blank">
+          Ask a question
+         </a>
+        </li>
+        <!--  <li><a href="mailto:info@openweathermap.org">info@openweathermap.org</a>  -->
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="horizontal-section">
+     <div class="footer-section">
+      <div class="my-5">
+       <p>
+        Download OpenWeather app
+       </p>
+       <div>
+        <a href="https://apps.apple.com/gb/app/openweather/id1535923697" target="_blank">
+         <img alt="Get it on AppStore" src="/themes/openweathermap/assets/img/mobile_app/app-store-badge.svg"/>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=uk.co.openweather" target="_blank">
+         <img alt="Get it on Google Play" class="google-play-img" src="/themes/openweathermap/assets/img/mobile_app/google-play-badge.png"/>
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="footer-section">
+      <div class="my-5">
+       <img alt="RMets logo" height="70" src="/themes/openweathermap/assets/img/rmets1.png"/>
+      </div>
+     </div>
+    </div>
+    <div class="horizontal-section my-5">
+     <div>
+      <span>
+       Supplier of Achilles UVDB community
+      </span>
+      <br/>
+      <span>
+       © 2012 — 2024 OpenWeather ® All rights reserved
+      </span>
+      <br/>
+      <br/>
+     </div>
+     <div class="social">
+      <a href="https://www.facebook.com/groups/270748973021342" target="_blank">
+       <img alt="facebook icon" src="/themes/openweathermap/assets/img/owm_icons/icon_facebook.png"/>
+      </a>
+      <a href="https://twitter.com/OpenWeatherMap" target="_blank">
+       <img alt="x icon" src="/themes/openweathermap/assets/img/owm_icons/icon_x_black.png"/>
+      </a>
+      <a href="https://www.linkedin.com/company/9816754" target="_blank">
+       <img alt="linkedin icon " src="/themes/openweathermap/assets/img/owm_icons/icon_linkedin.png"/>
+      </a>
+      <a href="https://medium.com/@openweathermap" target="_blank">
+       <img alt="meduim icon" src="/themes/openweathermap/assets/img/owm_icons/new_medium.svg"/>
+      </a>
+      <a href="https://t.me/openweathermap" target="_blank">
+       <img alt="telegram icon" src="/themes/openweathermap/assets/img/owm_icons/icon_telegram.png"/>
+      </a>
+      <a href="https://github.com/openweathermap" target="_blank">
+       <img alt="github icon" src="/themes/openweathermap/assets/img/owm_icons/icon_github.png"/>
+      </a>
+     </div>
+    </div>
+    <div class="horizontal-section">
+    </div>
+   </div>
+  </div>
+  <script src="https://cdn.ravenjs.com/3.6.1/raven.min.js">
+  </script>
+  <script>
+   Raven.config('http://66df88eb63e94f27964b84031e49b358@sentry.owm.io/16').install()
+  </script>
+  <script src="/themes/openweathermap/assets/js/bundle_owm_postload.c31872127471c475ade1.js">
+  </script>
+  <script src="/themes/openweathermap/assets/js/postload_scripts_js.c31872127471c475ade1.js">
+  </script>
+  <script src="/themes/openweathermap/assets/js/advertising.js">
+  </script>
+  <div class="gdpr-banner">
+   <div class="gdpr-banner__wrapper">
+    <div class="gdpr-banner__column gdpr-banner__column--1">
+     <div class="gdpr-banner__row">
+      <div class="gdpr-banner__message">
+       We use cookies to personalize content and to analyze our traffic. Please decide if you are willing to accept cookies from our website.
+      </div>
+     </div>
+    </div>
+    <div class="gdpr-banner__column gdpr-banner__column--2">
+     <div class="gdpr-banner__settings">
+      <a data-request="onDecline" data-request-success="document.location.href = 'https://openweathermap.org/cookies'" href="https://openweathermap.org/cookies" rel="privacy" role="link">
+       Advanced Settings
+      </a>
+     </div>
+     <div class="gdpr-banner__opt-out">
+      <button aria-pressed="false" class="gdpr-banner__button gdpr-banner__button--opt-out" data-request="onDecline" data-request-success="document.querySelector('.gdpr-banner').remove()" role="button" tabindex="0">
+       Decline
+      </button>
+     </div>
+     <div class="gdpr-banner__opt-in">
+      <button aria-pressed="false" class="gdpr-banner__button gdpr-banner__button--opt-in" data-request="onAccept" data-request-success="$('.gdpr-banner').remove()" data-request-update="'gtag' : '#gdpr-reload'" role="button" tabindex="0">
+       Accept
+      </button>
+     </div>
+     <div class="gdpr-banner__dismiss">
+      <button aria-pressed="false" class="gdpr-banner__button--dismiss" onclick="document.querySelector('.gdpr-banner').remove()" role="button" tabindex="0">
+       ×
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

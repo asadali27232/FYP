@@ -1,0 +1,9 @@
+Django
+numpy
+pandas
+torch
+joblib
+wfdb
+matplotlib
+seaborn
+tqdm

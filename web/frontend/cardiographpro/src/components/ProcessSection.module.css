@@ -1,0 +1,54 @@
+.processSection {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f5f7fa;
+}
+
+.sectionTitle {
+    color: #e63946;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+}
+
+.processSteps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.step {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+}
+
+.stepNumber {
+    font-size: 2rem;
+    color: #d1d1d1;
+    margin-bottom: 1rem;
+}
+
+.imageWrapper {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.stepTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stepDescription {
+    color: #666;
+}

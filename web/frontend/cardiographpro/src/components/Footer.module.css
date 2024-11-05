@@ -1,0 +1,127 @@
+/* src/components/Footer.module.css */
+
+.root {
+    --color-blue: #0e1136; /* Blue color */
+    --color-red: #dc143c; /* Red color */
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh; /* Set footer to occupy 80% of viewport height */
+    background-color: #0e1136; /* Background color */
+    color: white; /* White text color */
+    margin: 0;
+    padding: 0;
+}
+.footer {
+    background-image: url(../assets/images/shape-23.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.footerTop {
+    display: flex;
+    flex: 1; /* Take remaining space */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    gap: 30px; /* Space between footer items */
+    padding: 0 100px; /* Padding around footer items */
+}
+.footerItem {
+    flex: 1; /* Each item takes equal space */
+    padding: 0; /* Add padding to inner divs */
+    padding-top: 150px;
+}
+
+.footerItem:nth-last-child(1) {
+    background-image: url(../assets/images/shape-25.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.footerLarge {
+    flex: 1.5; /* The first item takes more space */
+    padding: 0;
+    padding-right: 120px;
+    padding-top: 150px;
+    background-image: url(../assets/images/shape-24.png);
+    background-repeat: no-repeat;
+}
+
+.footer h4 {
+    font-size: 26px;
+    margin-bottom: 20px; /* Space below headings */
+    font-weight: 600; /* Bold headings */
+}
+
+.footer ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.footer ul li {
+    margin-bottom: 20px; /* Space between links */
+}
+
+.footer a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* White link color */
+    font-weight: 600; /* Bold on hover */
+}
+
+.footer a:hover {
+    font-weight: 600; /* Bold on hover */
+    color: #dc143c; /* Red color on hover */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.footerItem p {
+    font-weight: bold;
+    display: inline;
+}
+
+.footerItem:nth-child(1) p {
+    font-weight: 500;
+    line-height: 1.5;
+    word-spacing: 2px;
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    border-top: 1px solid #e9d8dc; /* Border on top */
+    text-align: center; /* Center align copyright */
+    padding: 20px 100px; /* Padding around footer items */
+}
+.socialLinks{
+    margin-top: 20px;
+}
+.socialLinks a {
+    margin-right: 1.5rem; /* Increased spacing between social links */
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* White color for social links */
+    font-size: 0.9rem; /* Font size for social links */
+    transition: color 0.5s ease; /* Smooth transition for color change */
+}
+
+/* Change color of the icons on hover */
+.socialLinks a:hover {
+    color: #dc143c; /* Change icon color to Crimson on hover */
+}
+
+.icon {
+    margin-bottom: 20px;
+}
+
+.contactItem {
+    display: flex; /* Arrange icon and text horizontally */
+    margin-bottom: 20px;
+    align-items: center; /* Vertically align content */
+}
+
+.contactLink {
+    text-decoration: none; /* Remove underline initially */
+}
