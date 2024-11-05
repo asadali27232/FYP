@@ -206,7 +206,7 @@ if __name__ == "__main__":
     ecg.PreprocessingLeads(leads)
     ecg.SignalExtraction_Scaling(leads)
     final_data = ecg.CombineConvert1Dsignal()
-    reduced_data = ecg.DimensionalReduciton(final_data)
+    reduced_data =  ecg.DimensionalReduciton(final_data)
     classification_result = ecg.ModelLoad_predict(reduced_data)
     print(classification_result)
 
