@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
                 <Header /> {/* Include the Header component */}
                 <AuthProvider>{children}</AuthProvider>
                 <Footer /> {/* Include the Footer component */}
-            </body>
+            </body> 
         </html>
     );
 }
