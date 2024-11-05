@@ -95,18 +95,23 @@
     font-weight: bolder;
     cursor: pointer;
 }
-.signupbtn{
-
+.signupbtn {
     width: 50%;
     background-color: white;
     color: #007E85;
     padding: 5px;
     border: 1px solid #007E85; 
+    border-radius: 25px; /* This makes the button round */
+    display: block;      /* Ensure the button behaves as a block element */
+    margin: 0 auto;     /* Center the button */
+    cursor: pointer;     /* Change cursor to pointer on hover */
 }
+
 .signupbtn:hover {
-    background-color: #007E85;
-    color: white;
+    background-color: #007E85; /* Optional: Change background color on hover */
+    color: white;               /* Optional: Change text color on hover */
 }
+
 
 .welcomeBack {
     font-size: 2rem;
