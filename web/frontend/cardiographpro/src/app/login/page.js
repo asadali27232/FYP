@@ -64,34 +64,34 @@ export default function Login() {
                     <div className={styles.logo}>
                         {/* Using Next.js Image component */}
                         <Image
-                            src="/assets/images/logo.png"
-                            alt="Logo"
-                            width={150}
-                            height={150}
+                           // src="/assets/images/logo.png"
+                           // alt="Logo"
+                            //width={150}
+                            //height={150}
                         />
                         <span className={styles.cardiograph}>
                             Cardiograph<span className={styles.pro}>pro</span>
                         </span>
                         <p className={styles.careLine}>
                             Providing Quality <span>Heart<br />care</span> for a{' '}
-                            <span style={{ color: '#6EAB36' }}>Brighter</span>{' '}
+                            <span style={{ color: '#0e1136'  }}>Brighter</span>{' '}
                             and<br />{' '}
-                            <span style={{ color: '#6EAB36' }}>Healthy</span>{' '}
+                            <span style={{ color: '#009688' }}>Healthy</span>{' '}
                             Future
                         </p>
                         {/* Using Next.js Image component for the doctor image */}
                         <Image
-                            src="/assets/doctor.png"
-                            alt="Doctor"
-                            width={400}
-                            height={400}
-                            className={styles.doctorImg}
-                            style={{
-                                display: 'block',
-                                marginTop: '10px',
-                                marginLeft: '70px',
-                                borderRadius: '50%',
-                            }}
+                            //src="/assets/doctor.png"
+                           // alt="Doctor"
+                           // width={400}
+                            //height={400}
+                            //className={styles.doctorImg}
+                            //style={{
+                              //  display: 'block',
+                                //marginTop: '10px',
+                                //marginLeft: '70px',
+                                ///borderRadius: '50%',
+                            
                         />
                     </div>
                 </div>

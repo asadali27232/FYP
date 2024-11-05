@@ -1,27 +1,25 @@
-
-
 .container {
     display: flex;
     height: 100vh;
     background-color: white;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 500px; /* Match signup for a consistent look */
     overflow: hidden;
 }
 
 .leftSection,
 .rightSection {
     flex: 1;
-    border-radius: 20px;
+    border-radius: 90px; /* Match signup for consistent rounded corners */
 }
 
 .leftSection {
-    background-color: #d9d9d9;
+    background-color: #D9D9D9; /* Consistent light gray */
 }
 
 .rightSection {
-    background-color: #007e85;
-    color: #ffffff;
+    background-color: #0b0e41; /* Dark background for the right section */
+    color: #0b0000; /* White text for contrast */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +32,7 @@
 }
 
 .cardiograph {
-    color: #007e85;
+    color: #007E85; /* Consistent with signup */
     padding: 50px;
     margin-bottom: 20px;
     padding-left: 10px;
@@ -46,56 +44,76 @@
 }
 
 .pro {
-    color: #6eab36;
+    color: #6EAB36; /* Consistent with signup */
     display: inline-block;
 }
 
 .careLine {
-    font-size: 30px;
+    font-size: 60px; /* Match signup for consistency */
     text-align: center;
-    color: black;
+    color: black; /* Consistent text color */
 }
 
 .careLine span:nth-child(1) {
-    color: #007e85;
+    color: #007E85; /* Consistent accent color */
 }
 
+/* Input styles */
 .emailInput,
 .passwordInput {
-    width: 70%;
-    padding: 15px;
-    margin-bottom: 30px;
-    margin-left: 100px;
-    border-radius: 20px;
-    padding-left: 20px;
+    width: 90%; /* Consistent width with signup input */
+    background-color: #D9D9D9; /* Consistent input background */
+    border: 1px solid #100e56; /* Consistent border */
+    border-radius: 30px; /* Match signup input radius */
+    padding: 15px; /* Consistent padding */
+    margin-bottom: 30px; /* Adjust margin for spacing */
 }
 
-.emailInput {
-    margin-top: 30px;
-    border: 1px solid #ccc;
-    background-color: #d9d9d9;
-}
-
-.passwordInput {
-    border: 1px solid #ccc;
-    background: #d9d9d9;
-}
-
+/* Login button styles */
 .loginBtn {
-    width: 60%;
+    width: 40%; /* Consistent button width with signup */
     background-color: white;
-    color: #007e85;
-    padding: 15px;
-    border: 1px solid #007e85;
-    border-radius: 20px;
-    margin-top: 40px;
-    margin-bottom: 3%;
-    margin-left: 130px;
-    font-weight: bolder;
+    color: #0e1136; /* Consistent text color */
+    padding: 12px;
+    border: 1px solid #007E85; /* Consistent border */
+    border-radius: 80px; /* Make the button round like signup */
+    display: block; /* Ensure the button behaves as a block element */
+    margin: 0 auto; /* Center the button */
     cursor: pointer;
+    margin-left: 120px;
+    font-weight: bolder; /* Bold text */
 }
 
 .loginBtn:hover {
-    background-color: #007e85;
-    color: white;
+    background-color: #464fce; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+/* Additional styles */
+.welcomeBack {
+    font-size: 2rem; /* Match font size with signup */
+    margin-bottom: 20px;
+    margin-left: -80px; 
+    color: #D9D9D9;
+    font-weight: bolder;
+    margin-top: -90px;/* Consistent margin */
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align */
+}
+
+.error {
+    color: red; /* Consistent error message color */
+    margin-bottom: 15px;
+}
+
+.doctorImg {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border-radius: 50%; /* Consistent round image */
 }
