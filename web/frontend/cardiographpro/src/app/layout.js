@@ -6,7 +6,7 @@ import { AuthProvider } from './context/AuthContext';
 
 export const metadata = {
     title: 'Cardiograph Pro',
-    description: 'A clean and simple  layout for Cardiograph Pro',
+    description: 'A clean and simple layout for Cardiograph Pro',
 };
 
 export default function RootLayout({ children }) {
