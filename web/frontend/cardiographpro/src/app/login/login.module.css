@@ -1,64 +1,101 @@
+
+
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background-color: #f0f2f5;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.form {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+.leftSection,
+.rightSection {
+    flex: 1;
+    border-radius: 20px;
+}
+
+.leftSection {
+    background-color: #d9d9d9;
+}
+
+.rightSection {
+    background-color: #007e85;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.cardiograph {
+    color: #007e85;
+    padding: 50px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    display: inline-block;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 }
 
-.title {
-    margin-bottom: 1rem;
-    font-size: 24px;
-    color: #333;
+.pro {
+    color: #6eab36;
+    display: inline-block;
 }
 
-.inputGroup {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    text-align: left;
+.careLine {
+    font-size: 30px;
+    text-align: center;
+    color: black;
 }
 
-.inputGroup label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #555;
+.careLine span:nth-child(1) {
+    color: #007e85;
 }
 
-.inputGroup input {
-    padding: 0.5rem;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.2s;
+.emailInput,
+.passwordInput {
+    width: 70%;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+    border-radius: 20px;
+    padding-left: 20px;
 }
 
-.inputGroup input:focus {
-    border-color: #0070f3;
+.emailInput {
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    background-color: #d9d9d9;
 }
 
-.button {
-    padding: 0.75rem 1rem;
-    background-color: #0070f3;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
+.passwordInput {
+    border: 1px solid #ccc;
+    background: #d9d9d9;
+}
+
+.loginBtn {
+    width: 60%;
+    background-color: white;
+    color: #007e85;
+    padding: 15px;
+    border: 1px solid #007e85;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom: 3%;
+    margin-left: 130px;
+    font-weight: bolder;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-.button:hover {
-    background-color: #005bb5;
+.loginBtn:hover {
+    background-color: #007e85;
+    color: white;
 }
