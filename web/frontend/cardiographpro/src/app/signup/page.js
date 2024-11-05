@@ -53,7 +53,9 @@ export default function Signup() {
             <div className={styles.container}>
                 <div className={styles.leftSection}>
                     <div className={styles.logo}>
-                        <img src="/assets/images/logo.png" alt="Logo" />
+                     <img
+                         //src="/assets/images/logo.png" alt="Logo" 
+                      / >
                         <span className={styles.cardiograph}>
                             Cardiograph
                             <span className={styles.pro}>pro</span>
@@ -66,9 +68,9 @@ export default function Signup() {
                             Future
                         </p>
                         <img
-                            src="/assets/images/doctor.png"
-                            alt="Doctor"
-                            className={styles.doctorImg}
+                            //src="/assets/images/doctor.png"
+                            //alt="Doctor"
+                            //className={styles.doctorImg}
                         />
                     </div>
                 </div>
@@ -137,7 +139,7 @@ export default function Signup() {
                                 <option value="doctor">Doctor</option>
                                 <option value="patient">Patient</option>
                             </select>
-                            <button type="submit" className={styles.loginBtn}>
+                            <button type="submit" className={styles.signupbtn}>
                                 Sign Up
                             </button>
                         </form>
