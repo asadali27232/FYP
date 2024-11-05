@@ -1,0 +1,2 @@
+# Heart Disease Prediction from ECG through Image  Processing
+ "Utilizing ECG Image Processing for Heart Disease Prediction: This project employs advanced image processing and machine learning techniques to analyze ECG images, extracting critical features to predict various heart conditions. By segmenting and processing ECG leads, extracting signal patterns, and using machine learning models, the project aims to offer a non-invasive method for early heart disease detection and risk assessment."
