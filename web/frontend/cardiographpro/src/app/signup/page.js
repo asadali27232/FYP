@@ -53,13 +53,11 @@ export default function Signup() {
             <div className={styles.container}>
                 <div className={styles.leftSection}>
                     <div className={styles.logo}>
-                     <img
-                         //src="/assets/images/logo.png" alt="Logo" 
-                      / >
-                        <span className={styles.cardiograph}>
-                            Cardiograph
-                            <span className={styles.pro}>pro</span>
-                        </span>
+                        <img
+                            // src="/assets/images/logo.png"
+                            // alt="Logo"
+                        />
+                      
                         <p className={styles.careLine}>
                             Providing Quality <span>Heart care</span> for a{' '}
                             <span style={{ color: '#0e1136' }}>Brighter</span>{' '}
@@ -68,9 +66,9 @@ export default function Signup() {
                             Future
                         </p>
                         <img
-                            //src="/assets/images/doctor.png"
-                            //alt="Doctor"
-                            //className={styles.doctorImg}
+                            // src="/assets/images/doctor.png"
+                            // alt="Doctor"
+                            // className={styles.doctorImg}
                         />
                     </div>
                 </div>
@@ -83,10 +81,26 @@ export default function Signup() {
                         <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
-                                placeholder="Enter Full Name"
+                                placeholder="Enter Username"
                                 className={styles.signupInput}
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="Enter First Name"
+                                className={styles.signupInput}
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="Enter Last Name"
+                                className={styles.signupInput}
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
                                 required
                             />
                             <input
@@ -127,6 +141,14 @@ export default function Signup() {
                                     required
                                 />
                             </div>
+                            <input
+                                type="text"
+                                placeholder="Enter Contact Number"
+                                className={styles.signupInput}
+                                value={contactNumber}
+                                onChange={(e) => setContactNumber(e.target.value)}
+                                required
+                            />
                             <select
                                 className={styles.signupInput}
                                 value={userType}
