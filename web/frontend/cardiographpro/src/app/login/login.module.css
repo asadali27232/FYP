@@ -49,7 +49,7 @@
 }
 
 .careLine {
-    font-size: 60px; /* Match signup for consistency */
+    font-size: 40px; /* Match signup for consistency */
     text-align: center;
     color: black; /* Consistent text color */
 }
