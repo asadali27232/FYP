@@ -146,7 +146,7 @@
 .doctorImg {
     width: 400px;
     height: auto;
-    display: block;
+    display: block; 
     margin-top: 10px;
     border-radius: 50%;
 } 
