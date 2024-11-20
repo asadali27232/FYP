@@ -49,54 +49,68 @@
 }
 
 .careLine {
-    font-size: 40px; /* Match signup for consistency */
+    font-size: 40px;
+    padding: 20px; /* Match signup for consistency */
     text-align: center;
-    color: black; /* Consistent text color */
+    color: black;
+    margin-top: 200px; /* Consistent text color */
 }
 
 .careLine span:nth-child(1) {
     color: #007E85; /* Consistent accent color */
 }
 
-/* Input styles */
+/* Input styles with focus effects */
 .emailInput,
 .passwordInput {
-    width: 90%; /* Consistent width with signup input */
-    background-color: #D9D9D9; /* Consistent input background */
-    border: 1px solid #100e56; /* Consistent border */
-    border-radius: 30px; /* Match signup input radius */
-    padding: 15px; /* Consistent padding */
-    margin-bottom: 30px; /* Adjust margin for spacing */
+    width: 90%;
+    background-color: #D9D9D9;
+    border: 1px solid #100e56;
+    border-radius: 30px;
+    padding: 15px;
+    margin-bottom: 30px;
+    outline: none; /* Remove default focus outline */
+    transition: all 0.3s ease-in-out; /* Smooth transition for focus */
 }
 
-/* Login button styles */
+/* Focus effect for input fields */
+.emailInput:focus:hover,
+.passwordInput:focus:hover {
+    border-color: #1b7688; /* Light blue border */
+    box-shadow: 0 0 50px rgba(52, 142, 215, 0.5);; /* Light blue glow */
+}
+
+/* Login button styles with smooth transition */
 .loginBtn {
-    width: 40%; /* Consistent button width with signup */
+    width: 40%;
     background-color: white;
-    color: #0e1136; /* Consistent text color */
+    color: #0e1136;
     padding: 12px;
-    border: 1px solid #007E85; /* Consistent border */
+    border: 1px solid #007E85;
     border-radius: 80px; /* Make the button round like signup */
-    display: block; /* Ensure the button behaves as a block element */
-    margin: 0 auto; /* Center the button */
+    display: block;
+    margin: 0 auto;
     cursor: pointer;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
     margin-left: 120px;
-    font-weight: bolder; /* Bold text */
 }
 
+/* Hover effect for login button */
 .loginBtn:hover {
-    background-color: #464fce; /* Change background color on hover */
-    color: white; /* Change text color on hover */
+    background-color: #2e1d8c; /* New hover color: Greenish */
+    color: white; /* White text */
+    box-shadow: 0 0 15px rgba(52, 142, 215, 0.5); /* Glow effect */
 }
 
 /* Additional styles */
 .welcomeBack {
     font-size: 2rem; /* Match font size with signup */
     margin-bottom: 20px;
-    margin-left: -80px; 
+    margin-left: -80px;
     color: #D9D9D9;
     font-weight: bolder;
-    margin-top: -90px;/* Consistent margin */
+    margin-top: -90px; /* Consistent margin */
 }
 
 .formContainer {
@@ -116,4 +130,5 @@
     display: block;
     margin-top: 10px;
     border-radius: 50%; /* Consistent round image */
+    object-fit: cover; /* Keep the image aspect ratio consistent */
 }
