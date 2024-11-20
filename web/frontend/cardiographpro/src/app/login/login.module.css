@@ -77,7 +77,7 @@
 .emailInput:focus:hover,
 .passwordInput:focus:hover {
     border-color: #1b7688; /* Light blue border */
-    box-shadow: 0 0 50px rgba(52, 142, 215, 0.5);; /* Light blue glow */
+    box-shadow: 0 0 50px rgba(52, 142, 215, 0.5); /* Light blue glow */
 }
 
 /* Login button styles with smooth transition */

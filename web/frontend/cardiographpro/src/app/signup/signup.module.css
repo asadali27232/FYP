@@ -67,13 +67,13 @@
     background-color: #D9D9D9;
     border: 1px solid #1f1262;
     box-sizing: border-box;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 15px;
     border-radius: 20px;
-    margin-left: 100px;
+    margin-left: 105px;
     justify-content: center;
     align-items: center;
-    color: rgb(17, 93, 186);
+    color: black;
     text-align: center;
     transition: all 0.3s ease-in-out; /* Smooth transition for hover and focus */
 }
@@ -88,6 +88,7 @@
 .line .signupInput:focus {
     border-color: #00bfff; /* Light blue border on focus */
     box-shadow: 0 0 15px rgba(0, 191, 255, 0.7); /* Enhanced glow on focus */
+    outline: none; /* Removes the default focus outline */
 }
 
 /* Line container for smaller fields */
@@ -107,7 +108,7 @@
 .signupbtn {
     width: 38%;
     background-color: white;
-    color: #13174e;
+    color: #0e1136;
     padding: 12px;
     border: 1px solid #0e1136;
     border-radius: 80px;
@@ -119,9 +120,9 @@
 }
 
 .signupbtn:hover {
-    background-color: #282a88; /* Greenish hover color */
-    color: white; /* White text on hover */
-    box-shadow: 0 0 15px rgba(44, 112, 186, 0.5); /* Glow effect on hover */
+    background-color: #2e1d8c; /* New hover color: Greenish */
+    color: white; /* White text */
+    box-shadow: 0 0 15px rgba(52, 142, 215, 0.5); /* Glow effect on hover */
 }
 
 /* Additional styles */
@@ -129,7 +130,14 @@
     color: #D9D9D9;
     font-size: 3rem;
     margin-bottom: 20px;
-    margin-left: -80px;
+    margin-left: 60px;
+    text-align: center;
+}
+.welcomeBack:hover{
+    background-color: #2e1d8c; /* New hover color: Greenish */
+    color: rgb(246, 246, 248); /* White text */
+    box-shadow: 0 0 25px rgba(49, 191, 216, 0.5);
+    transition: all 0.3s ease-in-out;
 }
 
 .formContainer {
@@ -137,16 +145,16 @@
     flex-direction: column;
     align-items: center;
 }
- 
+
 .error {
     color: red;
     margin-bottom: 15px;
 }
-   
+
 .doctorImg {
     width: 400px;
     height: auto;
-    display: block; 
+    display: block;
     margin-top: 10px;
     border-radius: 50%;
-}    
+}
