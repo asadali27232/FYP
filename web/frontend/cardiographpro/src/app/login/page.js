@@ -69,9 +69,7 @@ export default function Login() {
                             //width={150}
                             //height={150}
                         />
-                        <span className={styles.cardiograph}>
-                            Cardiograph<span className={styles.pro}>pro</span>
-                        </span>
+            
                         <p className={styles.careLine}>
                             Providing Quality <span>Heart<br />care</span> for a{' '}
                             <span style={{ color: '#0e1136'  }}>Brighter</span>{' '}
