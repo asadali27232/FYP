@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import styles from './ServicesSection.module.css';
+import services1 from '../assets/images/service-1.jpg';
+import services2 from '../assets/images/service-2.jpg';
+import services3 from '../assets/images/service-3.jpg';
 
 const ServicesSection = () => {
     return (
@@ -12,19 +15,19 @@ const ServicesSection = () => {
                 <div className={styles.serviceCard}>
                     <div className={styles.imageWrapper}>
                         <Image
-                            src="/images/neurosurgery.jpg"
+                            src={services1}
                             alt="Neurosurgery"
                             layout="fill"
                             objectFit="cover"
                             className={styles.image}
                         />
                         <div className={styles.icon}>
-                            <Image
+                            {/* <Image
                                 src="/images/neurosurgery-icon.png"
                                 alt="Neurosurgery Icon"
                                 width={30}
                                 height={30}
-                            />
+                            /> */}
                         </div>
                     </div>
                     <h4 className={styles.serviceTitle}>Neurosurgery</h4>
@@ -37,19 +40,19 @@ const ServicesSection = () => {
                 <div className={styles.serviceCard}>
                     <div className={styles.imageWrapper}>
                         <Image
-                            src="/images/laboratory.jpg"
+                            src={services2}
                             alt="Modern Laboratory"
                             layout="fill"
                             objectFit="cover"
                             className={styles.image}
                         />
                         <div className={styles.icon}>
-                            <Image
+                            {/* <Image
                                 src="/images/laboratory-icon.png"
                                 alt="Laboratory Icon"
                                 width={30}
                                 height={30}
-                            />
+                            /> */}
                         </div>
                     </div>
                     <h4 className={styles.serviceTitle}>Modern Laboratory</h4>
@@ -62,19 +65,19 @@ const ServicesSection = () => {
                 <div className={styles.serviceCard}>
                     <div className={styles.imageWrapper}>
                         <Image
-                            src="/images/experienced-doctors.jpg"
+                            src={services3}
                             alt="Experienced Doctors"
                             layout="fill"
                             objectFit="cover"
                             className={styles.image}
                         />
                         <div className={styles.icon}>
-                            <Image
+                            {/* <Image
                                 src="/images/doctor-icon.png"
                                 alt="Doctor Icon"
                                 width={30}
                                 height={30}
-                            />
+                            /> */}
                         </div>
                     </div>
                     <h4 className={styles.serviceTitle}>Experienced Doctors</h4>

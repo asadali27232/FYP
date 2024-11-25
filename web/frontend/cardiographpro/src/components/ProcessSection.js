@@ -1,5 +1,10 @@
 import Image from 'next/image';
 import styles from './ProcessSection.module.css';
+import process1 from '../assets/images/process-1.jpg';
+import process2 from '../assets/images/process-2.jpg';
+import process3 from '../assets/images/process-3.jpg';
+
+
 
 const ProcessSection = () => {
     return (
@@ -13,7 +18,7 @@ const ProcessSection = () => {
                     <span className={styles.stepNumber}>01</span>
                     <div className={styles.imageWrapper}>
                         <Image
-                            src="/images/appointment.jpg"
+                            src={process1}
                             alt="Get Appointment"
                             width={300}
                             height={200}
@@ -29,7 +34,7 @@ const ProcessSection = () => {
                     <span className={styles.stepNumber}>02</span>
                     <div className={styles.imageWrapper}>
                         <Image
-                            src="/images/checkup.jpg"
+                            src={process2}
                             alt="Start Check-Up"
                             width={300}
                             height={200}
@@ -45,7 +50,7 @@ const ProcessSection = () => {
                     <span className={styles.stepNumber}>03</span>
                     <div className={styles.imageWrapper}>
                         <Image
-                            src="/images/enjoy-healthy-life.jpg"
+                            src={process3}
                             alt="Enjoy Healthy Life"
                             width={300}
                             height={200}

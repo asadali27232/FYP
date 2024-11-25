@@ -1,8 +1,11 @@
 'use client'; // This marks the component as a Client Component
 import Image from 'next/image';
-import { useState } from 'react';
-import team1image from '../assets/images/about-1.jpg'; // replace with the path to your image
 import styles from './TeamSection.module.css'; // Assuming you save your CSS here
+import { useState } from 'react';
+import team4image from '../assets/images/team-4.jpg'; // replace with the path to your image
+import team1image from '../assets/images/team-1.jpg'; // replace with the path to your image
+import team2image from '../assets/images/team-2.jpg'; // replace with the path to your image
+import team3image from '../assets/images/team-3.jpg'; // replace with the path to your image
 
 const TeamSection = () => {
     const [hoveredCard, setHoveredCard] = useState(null);
@@ -19,7 +22,7 @@ const TeamSection = () => {
                         className={`${styles.cardContainer} bg-white p-6 rounded-lg shadow-lg`}>
                         <div className={styles.cardImage}>
                             <Image
-                                src="/path/to/image1.jpg" // replace with the path to your image
+                                src={team1image} // replace with the path to your image
                                 alt="Black Marvin"
                                 width={150}
                                 height={150}
@@ -43,7 +46,7 @@ const TeamSection = () => {
                         onMouseLeave={() => setHoveredCard(null)}>
                         <div className={styles.cardImage}>
                             <Image
-                                src="/path/to/image2.jpg" // replace with the path to your image
+                                src={team2image} // replace with the path to your image
                                 alt="Eleanor Pena"
                                 width={150}
                                 height={150}
@@ -80,7 +83,7 @@ const TeamSection = () => {
                         className={`${styles.cardContainer} bg-white p-6 rounded-lg shadow-lg`}>
                         <div className={styles.cardImage}>
                             <Image
-                                src="/path/to/image3.jpg" // replace with the path to your image
+                                src={team3image} // replace with the path to your image
                                 alt="Arlene Maccy"
                                 width={150}
                                 height={150}
@@ -98,7 +101,7 @@ const TeamSection = () => {
                         className={`${styles.cardContainer} bg-white p-6 rounded-lg shadow-lg`}>
                         <div className={styles.cardImage}>
                             <Image
-                                src={team1image} // replace with the path to your image
+                                src={team4image} // replace with the path to your image
                                 alt="Jenny Wilson"
                                 width={150}
                                 height={150}

@@ -1,5 +1,10 @@
 import Image from 'next/image';
 import styles from './WhyChooseUs.module.css';
+import sideimage from '../assets/images/chooseus-bg.jpg';
+import icon1 from '../assets/images/icon1.png';
+import icon2 from '../assets/images/icon2.png';
+import icon3 from '../assets/images/icon3.png';
+import icon4 from '../assets/images/icon4.png';
 
 const WhyChooseUs = () => {
     return (
@@ -14,7 +19,7 @@ const WhyChooseUs = () => {
                         <div className={styles.serviceItem}>
                             <div className={styles.icon}>
                                 <Image
-                                    src="/images/professional-staff-icon.png"
+                                    src={icon1}
                                     alt="Professional Staff"
                                     width={40}
                                     height={40}
@@ -31,7 +36,7 @@ const WhyChooseUs = () => {
                         <div className={styles.serviceItem}>
                             <div className={styles.icon}>
                                 <Image
-                                    src="/images/emergency-case-icon.png"
+                                    src={icon3}
                                     alt="Emergency Case"
                                     width={40}
                                     height={40}
@@ -48,7 +53,7 @@ const WhyChooseUs = () => {
                         <div className={styles.serviceItem}>
                             <div className={styles.icon}>
                                 <Image
-                                    src="/images/online-appointment-icon.png"
+                                    src={icon2}
                                     alt="Online Appointment"
                                     width={40}
                                     height={40}
@@ -65,7 +70,7 @@ const WhyChooseUs = () => {
                         <div className={styles.serviceItem}>
                             <div className={styles.icon}>
                                 <Image
-                                    src="/images/247-services-icon.png"
+                                    src={icon4}
                                     alt="24/7 Services"
                                     width={40}
                                     height={40}
@@ -83,7 +88,7 @@ const WhyChooseUs = () => {
                 </div>
                 <div className={styles.imageSection}>
                     <Image
-                        src="/images/why-choose-us.jpg"
+                        src={sideimage}
                         alt="Medical Staff"
                         width={500}
                         height={500}
