@@ -7,7 +7,7 @@
     border-radius: 20px; /* Round all corners */
     overflow: hidden; /* Ensure content doesn't overflow rounded corners */
 }
-   
+    
 .left-section,
 .right-section {
     flex: 1;
