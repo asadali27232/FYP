@@ -11,4 +11,3 @@ import UploadSignals from '@/components/UploadSignals';
         </section>
     );
 }
-  
