@@ -45,7 +45,7 @@ export default function Login() {
                 tokenTestResponse.data.message ===
                 'You are having a valid token'
             ) {
-                alert('You are logged in');
+                alert('You are logged in'); 
                 router.push('/profile'); // Use Next.js router for navigation
             }
         } catch (error) {
