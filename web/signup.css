@@ -10,7 +10,7 @@
                
 .left-section,
 .right-section {
-    flex: 1; 
+    flex: 1;  
     border-radius: 50px; /* Round all corners */
 }
 
