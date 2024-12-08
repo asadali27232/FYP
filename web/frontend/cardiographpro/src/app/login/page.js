@@ -46,7 +46,7 @@ export default function Login() {
                 'You are having a valid token'
             ) {
                 alert('You are logged in');  
-                router.push('/profile'); // Use Next.js router for navigation
+                router.push('/profile'); 
             }
         } catch (error) {
             alert(
