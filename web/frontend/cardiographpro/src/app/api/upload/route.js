@@ -9,7 +9,7 @@ const upload = multer({
             cb(null, 'uploads/'); // Directory to save the uploaded files
         },
         filename: (req, file, cb) => {
-            cb(null, file.originalname); // Use original file name
+            cb(null,  file.originalname); // Use original file name
         },
     }),
 });

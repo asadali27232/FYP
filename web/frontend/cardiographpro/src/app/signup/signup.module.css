@@ -1,53 +1,160 @@
-/* src/app/signup/signup.module.css */
 .container {
-    max-width: 400px;
-    margin: 0 auto;
+    display: flex;
+    height: 100vh;
+    background-color: white;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    overflow: hidden;
 }
 
-.form {
+.leftSection,
+.rightSection {
+    flex: 1;
+    border-radius: 90px;
+}
+
+.leftSection {
+    background-color: #D9D9D9;
+}
+
+.rightSection {
+    background-color: #0b0e41;
+    color: #FFFFFF;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.title {
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.cardiograph {
+    color: #007E85;
+    padding: 50px;
     margin-bottom: 20px;
+    padding-left: 10px;
+    display: inline-block;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 }
 
-.inputGroup {
+.pro {
+    color: #6EAB36;
+    display: inline-block;
+}
+
+.careLine {
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    color: black;
+    margin-top: 200px;
+}
+
+.careLine span:nth-child(1) {
+    color: #007E85;
+}
+
+/* Input fields with hover and focus effects */
+.signupInput,
+.line .signupInput {
+    width: 30%;
+    background-color: #D9D9D9;
+    border: 1px solid #1f1262;
+    box-sizing: border-box;
+    padding: 10px;
     margin-bottom: 15px;
+    border-radius: 20px;
+    margin-left: 105px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover and focus */
 }
 
-.container label {
-    margin-bottom: 5px;
-    font-weight: bold;
+.signupInput:hover,
+.line .signupInput:hover {
+    border-color: #00bfff; /* Light blue border on hover */
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Light blue glow */
 }
 
-.container input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.signupInput:focus,
+.line .signupInput:focus {
+    border-color: #00bfff; /* Light blue border on focus */
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.7); /* Enhanced glow on focus */
+    outline: none; /* Removes the default focus outline */
+}
+
+/* Line container for smaller fields */
+.line {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    padding: 5px;
 }
 
-.button {
-    background-color: #0070f3;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
+.line .signupInput {
+    width: 48%; /* Reduced width for smaller boxes */
+}
+
+/* Signup button with hover effects */
+.signupbtn {
+    width: 38%;
+    background-color: white;
+    color: #0e1136;
+    padding: 12px;
+    border: 1px solid #0e1136;
+    border-radius: 80px;
+    display: block;
+    margin: 0 auto;
     cursor: pointer;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover */
 }
 
-.button:hover {
-    background-color: #005bb5;
+.signupbtn:hover {
+    background-color: #2e1d8c; /* New hover color: Greenish */
+    color: white; /* White text */
+    box-shadow: 0 0 15px rgba(52, 142, 215, 0.5); /* Glow effect on hover */
+}
+
+/* Additional styles */
+.welcomeBack {
+    color: #D9D9D9;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    text-align: center;
+}
+.welcomeBack:hover{
+    background-color: #2e1d8c; /* New hover color: Greenish */
+    color: rgb(246, 246, 248); /* White text */
+    box-shadow: 0 0 25px rgba(49, 191, 216, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .error {
     color: red;
     margin-bottom: 15px;
+}
+
+.doctorImg {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border-radius: 50%;
 }
