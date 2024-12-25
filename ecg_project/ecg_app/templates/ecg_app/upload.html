@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload ECG Image</title>
+</head>
+<body>
+    <h1>Upload ECG Image</h1>
+    <form action="{% url 'process_ecg' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="ecg_image">Select ECG Image:</label>
+        <input type="file" name="ecg_image" id="ecg_image" required>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
