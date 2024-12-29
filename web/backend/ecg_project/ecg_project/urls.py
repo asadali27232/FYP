@@ -11,6 +11,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('upload/', predict_ecg, name='upload'),
     path('auth/', include('auth_app.urls')),  # Include auth_app URLs
+    path('image/', include('image_app.urls')),
 
 
 ]
