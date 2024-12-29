@@ -65,8 +65,9 @@ class ECG:
         Lead_12 = image[900:1200, 1630:2125]
         Lead_13 = image[1250:1480, 150:2125]
 
-        Leads = [Lead_1, Lead_2, Lead_3, Lead_4, Lead_5, Lead_6, Lead_7, Lead_8, Lead_9, Lead_10, Lead_11, Lead_12, Lead_13]
-        
+        Leads = [Lead_1, Lead_2, Lead_3, Lead_4, Lead_5, Lead_6,
+                 Lead_7, Lead_8, Lead_9, Lead_10, Lead_11, Lead_12, Lead_13]
+
         if not Leads:
             return None
 
@@ -147,28 +148,34 @@ class ECG:
                     test = resize(contour, (255, 2))
             if (x + 1) % 3 == 0:
                 ax4[x_counter][y_counter].invert_yaxis()
-                ax4[x_counter][y_counter].plot(test[:, 1], test[:, 0], linewidth=1, color='black')
+                ax4[x_counter][y_counter].plot(
+                    test[:, 1], test[:, 0], linewidth=1, color='black')
                 ax4[x_counter][y_counter].axis('image')
-                ax4[x_counter][y_counter].set_title("Contour {} image".format(x + 1))
+                ax4[x_counter][y_counter].set_title(
+                    "Contour {} image".format(x + 1))
                 x_counter += 1
                 y_counter = 0
             else:
                 ax4[x_counter][y_counter].invert_yaxis()
-                ax4[x_counter][y_counter].plot(test[:, 1], test[:, 0], linewidth=1, color='black')
+                ax4[x_counter][y_counter].plot(
+                    test[:, 1], test[:, 0], linewidth=1, color='black')
                 ax4[x_counter][y_counter].axis('image')
-                ax4[x_counter][y_counter].set_title("Contour {} image".format(x + 1))
+                ax4[x_counter][y_counter].set_title(
+                    "Contour {} image".format(x + 1))
                 y_counter += 1
 
             lead_no = x
             scaler = MinMaxScaler()
             fit_transform_data = scaler.fit_transform(test)
-            Normalized_Scaled = pd.DataFrame(fit_transform_data[:, 0], columns=['X'])
+            Normalized_Scaled = pd.DataFrame(
+                fit_transform_data[:, 0], columns=['X'])
             Normalized_Scaled = Normalized_Scaled.T
             if (os.path.isfile('scaled_data_1D_{lead_no}.csv'.format(lead_no=lead_no + 1))):
                 Normalized_Scaled.to_csv('Scaled_1DLead_{lead_no}.csv'.format(lead_no=lead_no + 1), mode='a',
                                          index=False)
             else:
-                Normalized_Scaled.to_csv('Scaled_1DLead_{lead_no}.csv'.format(lead_no=lead_no + 1), index=False)
+                Normalized_Scaled.to_csv('Scaled_1DLead_{lead_no}.csv'.format(
+                    lead_no=lead_no + 1), index=False)
 
         fig4.savefig('Contour_Leads_1-12_figure.png')
 
@@ -179,19 +186,22 @@ class ECG:
             if files.endswith(".csv"):
                 if files != 'Scaled_1DLead_1.csv':
                     df = pd.read_csv('{}'.format(files))
-                    test_final = pd.concat([test_final, df], axis=1, ignore_index=True)
+                    test_final = pd.concat(
+                        [test_final, df], axis=1, ignore_index=True)
 
         return test_final
 
     def DimensionalReduciton(self, test_final):
-        pca_loaded_model = joblib.load('D:\Semester 6\Heart-Disease-Prediction-from-ECG-through-Image--Processing\ecg_project\ecg_app\models\PCA_ECG (1).pkl')
+        pca_loaded_model = joblib.load(os.path.join(
+            os.getcwd(), 'ecg_app', 'models', 'PCA_ECG (1).pkl'))
         result = pca_loaded_model.transform(test_final)
         final_df = pd.DataFrame(result)
         return final_df
 
     def ModelLoad_predict(self, final_df):
         # Load the model
-        loaded_model = load('D:\Semester 6\Heart-Disease-Prediction-from-ECG-through-Image--Processing\ecg_project\ecg_app\models\Heart_Disease_Prediction_using_image_processing__ECG.pkl')
+        loaded_model = load(os.path.join(os.getcwd(), 'ecg_app', 'models',
+                            'Heart_Disease_Prediction_using_image_processing__ECG.pkl'))
 
         result = loaded_model.predict(final_df)
         if result[0] == 1:
