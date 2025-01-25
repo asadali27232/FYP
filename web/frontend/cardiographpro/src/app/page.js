@@ -13,10 +13,10 @@ export default function HomePage() {
             <BannerSection />
             <KeySection />
             <AboutSection />
-            <ServicesSection />
+            {/* <ServicesSection />
             <WhyChooseUs />
             <ProcessSection />
-            <TeamSection />
+            <TeamSection /> */}
         </div>
     );
 }

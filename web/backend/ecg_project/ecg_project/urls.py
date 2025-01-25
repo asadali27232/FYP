@@ -12,7 +12,7 @@ urlpatterns = [
     path('upload/', predict_ecg, name='upload'),
     path('auth/', include('auth_app.urls')),  # Include auth_app URLs
     path('image/', include('image_app.urls')),
-
+    path('chatbot/', include('chatbot.urls')),
 
 ]
 

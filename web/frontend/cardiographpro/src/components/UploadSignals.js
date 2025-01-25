@@ -132,30 +132,6 @@ const UploadSignals = () => {
                     {result && (
                         <div className={styles.resultContainer}>
                             <h2>Prediction Results</h2>
-                            <h3>Superclass Labels:</h3>
-                            <ul>
-                                {result.superclass_labels.map(
-                                    (label, index) => (
-                                        <li key={index}>
-                                            <div className={styles.icon}>
-                                                <Image
-                                                    src={check}
-                                                    alt="Icon"
-                                                    width={20}
-                                                    height={20}
-                                                    needed
-                                                    style={{
-                                                        marginRight: '8px',
-                                                        verticalAlign: 'middle',
-                                                    }}
-                                                />
-                                            </div>
-                                            {`Label ${index + 1}: ${label}`}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                            <h3>Class Names:</h3>
                             <ul>
                                 {result.class_names.map((name, index) => (
                                     <li key={index}>

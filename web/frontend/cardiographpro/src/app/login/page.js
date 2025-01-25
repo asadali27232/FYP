@@ -7,8 +7,8 @@ import { useRouter } from 'next/navigation'; // Import useRouter for navigation
 import Image from 'next/image'; // Import Next.js Image component
 
 export default function Login() {
-    const [email, setEmail] = useState('asadali@gmail.com');
-    const [password, setPassword] = useState('asadali');
+    const [email, setEmail] = useState('fyp@gmail.com');
+    const [password, setPassword] = useState('fyp1122');
     const router = useRouter();
 
     const handleSubmit = async (e) => {

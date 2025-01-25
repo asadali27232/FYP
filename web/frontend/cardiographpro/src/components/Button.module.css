@@ -23,7 +23,12 @@
     left: 50%;
     width: 300%; /* Width of splash */
     height: 300%; /* Height of splash */
-    background-color: rgba(14, 17, 54, 0.7); /* Slightly transparent splash color */
+    background-color: rgba(
+        14,
+        17,
+        54,
+        0.7
+    ); /* Slightly transparent splash color */
     border-radius: 50%; /* Circular splash */
     transform: translate(-50%, -50%) scale(0); /* Center and hide the splash */
     transition: transform 0.4s ease, opacity 0.4s ease; /* Transition for splash effect */

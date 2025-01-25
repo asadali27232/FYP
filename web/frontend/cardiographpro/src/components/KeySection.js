@@ -31,10 +31,10 @@ const KeySection = () => {
                             className={styles.iconStyle}
                         />
                     </div>
-                    <h3>Appointment</h3>
+                    <h3>ECG Signal Prediction</h3>
                     <p>
-                        Easily schedule your appointments with our user-friendly
-                        platform.
+                        This module demonstrates preprocessing, analyzing, and
+                        predicting disease on ECG signals data.
                     </p>
                 </div>
                 <div className={styles.serviceCard}>
@@ -45,10 +45,10 @@ const KeySection = () => {
                             className={styles.iconStyle}
                         />
                     </div>
-                    <h3>Prediction</h3>
+                    <h3>ECG Image Report Prediction</h3>
                     <p>
-                        Get accurate predictions for your health metrics and
-                        trends.
+                        This module demonstrates preprocessing, analyzing, and
+                        predicting disease on ECG report images.
                     </p>
                 </div>
                 <div className={styles.serviceCard}>
@@ -63,20 +63,6 @@ const KeySection = () => {
                     <p>
                         Engage with our medical chatbot for instant health
                         assistance.
-                    </p>
-                </div>
-                <div className={styles.serviceCard}>
-                    <div className={styles.icon}>
-                        <FontAwesomeIcon
-                            icon={faUserMd}
-                            size="1x"
-                            className={styles.iconStyle}
-                        />
-                    </div>
-                    <h3>Profiles</h3>
-                    <p>
-                        Create and manage your comprehensive medical profiles
-                        online.
                     </p>
                 </div>
             </div>

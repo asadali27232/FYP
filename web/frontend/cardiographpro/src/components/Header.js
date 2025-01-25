@@ -76,7 +76,7 @@ const Header = () => {
                             <a href="/appointment">Appointment</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/chatbot">Chatbot</a>
+                            <a href="/signup">SignUp</a>
                         </li>
                         {/* Remove duplicates for clarity */}
                     </ul>

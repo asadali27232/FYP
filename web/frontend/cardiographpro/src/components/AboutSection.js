@@ -25,9 +25,10 @@ const AboutSection = () => {
                     Services!
                 </p>
                 <p>
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                    do amet sint. Velit officia consequat duis enim velit
-                    mollit. Exercitation veniam consequat sunt nostrud amet.
+                    Heart disease is the leading cause of mortality worldwide,
+                    requiring early detection for urgent intervention. Delayed
+                    diagnosis through traditional methods limits treatment
+                    options.
                 </p>
                 <div className={styles.listContainer}>
                     <div className={styles.listItem}>
@@ -36,7 +37,7 @@ const AboutSection = () => {
                             size="lg"
                             style={{ marginRight: '1rem', color: '#dc143c' }}
                         />
-                        <p>Ambulance Services</p>
+                        <p>ECG Signal Prediction</p>
                     </div>
                     <div className={styles.listItem}>
                         <FontAwesomeIcon
@@ -44,7 +45,7 @@ const AboutSection = () => {
                             size="lg"
                             style={{ marginRight: '1rem', color: '#dc143c' }}
                         />
-                        <p>Oxygen on Wheel</p>
+                        <p>ECG Image Report Prediction </p>
                     </div>
                     <div className={styles.listItem}>
                         <FontAwesomeIcon
@@ -52,10 +53,11 @@ const AboutSection = () => {
                             size="lg"
                             style={{ marginRight: '1rem', color: '#dc143c' }}
                         />
-                        <p>Pharmacy on Clinic</p>
+                        <p>Chatbot</p>
                     </div>
-                    <div style={{marginTop: '20px'}}>
-                        <Button onClick={() => alert('Button clicked!')}>
+                    <div style={{ marginTop: '20px' }}>
+                        <Button
+                            onClick={() => console.log('Learn More Clicked')}>
                             Learn More
                         </Button>
                     </div>

@@ -51,40 +51,20 @@ const Footer = () => {
                 <div className={styles.footerItem}>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li>
-                            <a href="#">Home</a>
+                        <li className={styles.navItem}>
+                            <a href="/">Home</a>
                         </li>
-                        <li>
-                            <a href="#">About Us</a>
+                        <li className={styles.navItem}>
+                            <a href="/ecgimage">Image Prediction</a>
                         </li>
-                        <li>
-                            <a href="#">Services</a>
+                        <li className={styles.navItem}>
+                            <a href="/prediction">Signal Prediction</a>
                         </li>
-                        <li>
-                            <a href="#">Elements</a>
+                        <li className={styles.navItem}>
+                            <a href="/appointment">Appointment</a>
                         </li>
-                        <li>
-                            <a href="#">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className={styles.footerItem}>
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li>
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms & Conditions</a>
-                        </li>
-                        <li>
-                            <a href="#">Support</a>
-                        </li>
-                        <li>
-                            <a href="#">Disclaimer</a>
-                        </li>
-                        <li>
-                            <a href="#">FAQ</a>
+                        <li className={styles.navItem}>
+                            <a href="/signup">SignUp</a>
                         </li>
                     </ul>
                 </div>
@@ -97,7 +77,7 @@ const Footer = () => {
                             size="lg"
                             style={{ marginRight: '1rem' }}
                         />
-                        <p>3891 Ranchview Dr. Richardson, California USA</p>
+                        <p>COMSATS University Islamabad Lahore Campus</p>
                     </div>
                     <div className={styles.contactItem}>
                         <FontAwesomeIcon
@@ -116,7 +96,7 @@ const Footer = () => {
                         <a
                             href="mailto:example@info.com"
                             className={styles.contactLink}>
-                            example@info.com
+                            contact@cardiographpro.com
                         </a>
                     </div>
                 </div>

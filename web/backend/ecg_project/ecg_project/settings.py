@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'corsheaders',  # Ensure CORS headers are added
     'ecg_app',  # Include your custom app here
     'auth_app',  # Include the auth app here
+    'chatbot'
 ]
 
 REST_FRAMEWORK = {
